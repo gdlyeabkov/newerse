@@ -3,169 +3,173 @@
     <Header @changeRubric="changeRubricHandler" />
     <div class="totalContainer">
       <div class="news">
-        <div class="newsRow">
-          <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
-            <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsVerticalFormat">
+        <div v-if="news.filter(newsItem => {
+          return newsItem.category.includes('general')
+        }).length >= 5">
+          <div class="newsRow">
+            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
+              <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsVerticalFormat">
+                <span class="newsItemHeader">
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.category.includes("general")
+                    })[0].title
+                  }}
+                </span>
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.category.includes("general")
+                    })[0].description.substring(0, 45).substring(0, 45)
+                  }}
+                </span>
+              </div>
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.category.includes("general")
+                    })[0].author ?
+                      news.filter(newsItem => {
+                        return newsItem.category.includes("general")
+                      })[0].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
                     return newsItem.category.includes("general")
-                  })[0].title
+                  })[1].title
                 }}
               </span>
               <span>
                 {{
                   news.filter(newsItem => {
                     return newsItem.category.includes("general")
-                  })[0].description.substring(0, 45).substring(0, 45)
+                  })[1].description.substring(0, 45)
                 }}
               </span>
-            </div>
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[0].author ?
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
                     news.filter(newsItem => {
                       return newsItem.category.includes("general")
-                    })[0].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[1].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[1].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[1].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[1].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
+                    })[1].author ?
+                      news.filter(newsItem => {
+                        return newsItem.category.includes("general")
+                      })[1].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="newsRow">
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[2].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[2].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+          <div class="newsRow">
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.category.includes("general")
+                  })[2].title
+                }}
+              </span>
               <span>
                 {{
                   news.filter(newsItem => {
                     return newsItem.category.includes("general")
-                  })[2].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[2].author
-                  :
-                    'Неизвестно'
+                  })[2].description.substring(0, 45)
                 }}
               </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.category.includes("general")
+                    })[2].author ?
+                      news.filter(newsItem => {
+                        return newsItem.category.includes("general")
+                      })[2].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[3].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[3].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.category.includes("general")
+                  })[3].title
+                }}
+              </span>
               <span>
                 {{
                   news.filter(newsItem => {
                     return newsItem.category.includes("general")
-                  })[3].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[3].author
-                  :
-                    'Неизвестно'
+                  })[3].description.substring(0, 45)
                 }}
               </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.category.includes("general")
+                    })[3].author ?
+                      news.filter(newsItem => {
+                        return newsItem.category.includes("general")
+                      })[3].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[4].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[4].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.category.includes("general")
+                  })[4].title
+                }}
+              </span>
               <span>
                 {{
                   news.filter(newsItem => {
                     return newsItem.category.includes("general")
-                  })[4].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[4].author
-                  :
-                    'Неизвестно'
+                  })[4].description.substring(0, 45)
                 }}
               </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.category.includes("general")
+                    })[4].author ?
+                      news.filter(newsItem => {
+                        return newsItem.category.includes("general")
+                      })[4].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -2194,7 +2198,7 @@
           </div>
         </div>
         <div v-if="news.filter(newsItem => {
-          return newsItem.category.includes('general')
+          return newsItem.description.toLowerCase().includes('учен')
         }).length >= 5">
           <div class="newsRubric">
             <span class="newsRubricHeader">
