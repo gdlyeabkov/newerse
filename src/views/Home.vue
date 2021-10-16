@@ -7,7 +7,9 @@
           return newsItem.category.includes('general')
         }).length >= 5">
           <div class="newsRow">
-            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.category.includes('general')
+                })[0].title } })" class="newsItem newsItemMain">
               <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
               <div class="newsVerticalFormat">
                 <span class="newsItemHeader">

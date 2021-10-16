@@ -7,14 +7,23 @@
                     <div class="newsItemFooter">
                         <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                         <span>
-                            Компания
+                            {{
+                                newsItem.author ?
+                                    newsItem.author
+                                :
+                                    'Неизвестно'
+                            }}
                         </span>
                     </div>
                     <span class="newsItemHeader">
-                        Режиссер Мэтт Ривз опубликовал первый кадр из нового «Бэтмена»
+                        {{
+                            newsItem.title
+                        }}
                     </span>
                     <span>
-                        Режиссер Мэтт Ривз опубликовал в Twitter первый кадр из новой версии «Бэтмена». На фото Темный Рыцарь стоит на фоне алого рассвета.
+                        {{
+                            newsItem.description
+                        }}
                     </span>
                     <div class="carousel">
                         <span @click="scrollPictures(false)" class="material-icons">
@@ -71,7 +80,7 @@
                 <div class="adsItemHeader">
                     <div class="adsItemHeaderRow">
                     <span class="adsItemHeaderTitle">
-                        Сравниваем лучшие курсы в IT
+                        Как писать в Дзен
                     </span>
                     <span class="material-icons">
                         more_vert
@@ -79,7 +88,7 @@
                     </div>
                     <div class="adsItemHeaderRow">
                     <span class="adsItemHeaderPromouter">
-                        Яндекс практикум
+                        Яндекс Дзен
                     </span>
                     <span class="material-icons adsItemHeaderPromouter adsItemHeaderPromouterSeparator">
                         fiber_manual_record
@@ -89,9 +98,7 @@
                     </span>
                     </div>
                 </div>
-                <!-- <img width="150%" height="75%" src="https://avatars.mds.yandex.net/get-practicum/5750069/2a0000017bf1fd973b81bfb80d33c3cbe07c/optimize" alt=""> -->
-                <div class="adsItemImg">
-
+                <div class="adsItemImg dzen">
                 </div>
                 </div>
                 <div class="adsItem">
@@ -241,6 +248,46 @@ import Footer from '@/components/Footer.vue'
 
 export default {
     name: 'NewsItem',
+    data(){
+        return {
+            news: [],
+            newsItem: {},
+        }
+    },
+    mounted(){
+        fetch(`http://api.mediastack.com/v1/news?access_key=cc1688a90c2aa392ea8d81e6212bbf8a&limit=100&countries=ru&languages=ru`, {
+            mode: 'cors',
+            method: 'GET'
+        }).then(response => response.body).then(rb  => {
+            const reader = rb.getReader()
+            return new ReadableStream({
+                start(controller) {
+                function push() {
+                    reader.read().then( ({done, value}) => {
+                    if (done) {
+                        console.log('done', done);
+                        controller.close();
+                        return;
+                    }
+                    controller.enqueue(value);
+                    console.log(done, value);
+                    push();
+                    })
+                }
+                push();
+                }
+            });
+        }).then(stream => {
+            return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+        })
+        .then(async result => {
+            console.log(`JSON.parse(result).data: ${JSON.parse(result).data.length}`)
+            this.news = JSON.parse(result).data
+            this.newsItem = this.news.filter(newsItem => {
+                return newsItem.title.includes(this.$route.query.title)
+            })[0]
+        })
+    },
     methods: {
         scrollPictures(directionForward){
             if(directionForward){
@@ -343,11 +390,16 @@ export default {
   .adsItemHeaderPromouter {
     color: rgb(180, 180, 180);
   }
+
   .adsItemImg {
     height: 65%;
     background-size: 100% 100%;
     background-image: url('https://avatars.mds.yandex.net/get-practicum/5750069/2a0000017bf1fd973b81bfb80d33c3cbe07c/optimize');
   }
+
+    .dzen {
+        background-image: url('https://thumb.tildacdn.com/tild3039-3831-4365-a538-363861333862/-/resize/594x/-/format/webp/illustration.png') !important;
+    }
 
   .adsItemHeaderPromouterSeparator {
     font-size: 8px;
