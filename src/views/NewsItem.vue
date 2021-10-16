@@ -105,7 +105,7 @@
                 <div class="adsItemHeader">
                     <div class="adsItemHeaderRow">
                     <span class="adsItemHeaderTitle">
-                        Рукс 
+                        Колледж нового уровня
                     </span>
                     <span class="material-icons">
                         more_vert
@@ -113,7 +113,7 @@
                     </div>
                     <div class="adsItemHeaderRow">
                     <span class="adsItemHeaderPromouter">
-                        Яндекс практикум
+                        Колледж нового уровня
                     </span>
                     <span class="material-icons adsItemHeaderPromouter adsItemHeaderPromouterSeparator">
                         fiber_manual_record
@@ -123,8 +123,7 @@
                     </span>
                     </div>
                 </div>
-                <!-- <img width="150%" height="75%" src="https://avatars.mds.yandex.net/get-practicum/5750069/2a0000017bf1fd973b81bfb80d33c3cbe07c/optimize" alt=""> -->
-                <div class="adsItemImg">
+                <div class="adsItemImg college">
 
                 </div>
                 </div>
@@ -132,7 +131,7 @@
                 <div class="adsItemHeader">
                     <div class="adsItemHeaderRow">
                     <span class="adsItemHeaderTitle">
-                        Сравниваем лучшие курсы в IT
+                        Отзовик всех курсов в IT и digital
                     </span>
                     <span class="material-icons">
                         more_vert
@@ -140,7 +139,7 @@
                     </div>
                     <div class="adsItemHeaderRow">
                     <span class="adsItemHeaderPromouter">
-                        Яндекс практикум
+                        it
                     </span>
                     <span class="material-icons adsItemHeaderPromouter adsItemHeaderPromouterSeparator">
                         fiber_manual_record
@@ -150,8 +149,7 @@
                     </span>
                     </div>
                 </div>
-                <!-- <img width="150%" height="75%" src="https://avatars.mds.yandex.net/get-practicum/5750069/2a0000017bf1fd973b81bfb80d33c3cbe07c/optimize" alt=""> -->
-                <div class="adsItemImg">
+                <div class="adsItemImg it">
 
                 </div>
                 </div>
@@ -159,7 +157,7 @@
                 <div class="adsItemHeader">
                     <div class="adsItemHeaderRow">
                     <span class="adsItemHeaderTitle">
-                        Сравниваем лучшие курсы в IT
+                        Всё о профессии "Аналитик данных" с нуля
                     </span>
                     <span class="material-icons">
                         more_vert
@@ -167,7 +165,7 @@
                     </div>
                     <div class="adsItemHeaderRow">
                     <span class="adsItemHeaderPromouter">
-                        Яндекс практикум
+                        bigdata
                     </span>
                     <span class="material-icons adsItemHeaderPromouter adsItemHeaderPromouterSeparator">
                         fiber_manual_record
@@ -177,8 +175,7 @@
                     </span>
                     </div>
                 </div>
-                <!-- <img width="150%" height="75%" src="https://avatars.mds.yandex.net/get-practicum/5750069/2a0000017bf1fd973b81bfb80d33c3cbe07c/optimize" alt=""> -->
-                <div class="adsItemImg">
+                <div class="adsItemImg bigData">
 
                 </div>
                 </div>
@@ -186,7 +183,7 @@
                 <div class="adsItemHeader">
                     <div class="adsItemHeaderRow">
                     <span class="adsItemHeaderTitle">
-                        Сравниваем лучшие курсы в IT
+                        Профессия SMM менеджер
                     </span>
                     <span class="material-icons">
                         more_vert
@@ -194,7 +191,7 @@
                     </div>
                     <div class="adsItemHeaderRow">
                     <span class="adsItemHeaderPromouter">
-                        Яндекс практикум
+                        smm
                     </span>
                     <span class="material-icons adsItemHeaderPromouter adsItemHeaderPromouterSeparator">
                         fiber_manual_record
@@ -204,8 +201,7 @@
                     </span>
                     </div>
                 </div>
-                <!-- <img width="150%" height="75%" src="https://avatars.mds.yandex.net/get-practicum/5750069/2a0000017bf1fd973b81bfb80d33c3cbe07c/optimize" alt=""> -->
-                <div class="adsItemImg">
+                <div class="adsItemImg smm">
 
                 </div>
                 </div>
@@ -255,6 +251,7 @@ export default {
         }
     },
     mounted(){
+        
         fetch(`http://api.mediastack.com/v1/news?access_key=cc1688a90c2aa392ea8d81e6212bbf8a&limit=100&countries=ru&languages=ru`, {
             mode: 'cors',
             method: 'GET'
@@ -286,6 +283,10 @@ export default {
             this.newsItem = this.news.filter(newsItem => {
                 return newsItem.title.includes(this.$route.query.title)
             })[0]
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
         })
     },
     methods: {
@@ -399,6 +400,22 @@ export default {
 
     .dzen {
         background-image: url('https://thumb.tildacdn.com/tild3039-3831-4365-a538-363861333862/-/resize/594x/-/format/webp/illustration.png') !important;
+    }
+
+    .college {
+        background-image: url('https://ithub.ru/vardata/cache/resized/modules/dynalenta/files/29/2021/08/33/3f09609234f7bae282313/W274_H274_Ocenter.jpg') !important;
+    }
+
+    .it {
+        background-image: url('https://tutortop.ru/wp-content/themes/tutortop/img/bg.svg') !important;
+    }
+
+    .bigData {
+        background-image: url('https://thumb.tildacdn.com/tild6430-3137-4637-b931-373935646663/-/resize/105x/-/format/webp/Mask_Group.png') !important;
+    }
+
+    .smm {
+        background-image: url('https://imba.ru/theme_imba/static/src/img/other/im-learn.png') !important;
     }
 
   .adsItemHeaderPromouterSeparator {

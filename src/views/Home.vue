@@ -43,7 +43,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.category.includes('general')
+                })[2].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -77,7 +79,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.category.includes('general')
+                })[2].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -109,7 +113,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.category.includes('general')
+                })[3].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -141,7 +147,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.category.includes('general')
+                })[4].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -193,8 +201,12 @@
             </div>
           </div>
           <div class="newsRow">
-            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
-              <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('московск') || newsItem.description.toLowerCase().includes('москв')
+                })[0].title } })" class="newsItem newsItemMain">
+              <img class="newsItemMainImg" height="75%" width="50%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('московск') || newsItem.description.toLowerCase().includes('москв')
+                })[0].source" alt="">
               <div class="newsVerticalFormat">
                 <span class="newsItemHeader">
                   {{
@@ -227,7 +239,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('московск') || newsItem.description.toLowerCase().includes('москв')
+                })[1].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -261,7 +275,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('московск') || newsItem.description.toLowerCase().includes('москв')
+                })[2].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -293,7 +309,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('московск') || newsItem.description.toLowerCase().includes('москв')
+                })[3].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -325,7 +343,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('московск') || newsItem.description.toLowerCase().includes('москв')
+                })[4].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -377,8 +397,12 @@
             </div>
           </div>
           <div class="newsRow">
-            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
-              <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                })[0].title } })" class="newsItem newsItemMain">
+              <img class="newsItemMainImg" height="75%" width="50%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                })[0].source" alt="">
               <div class="newsVerticalFormat">
                 <span class="newsItemHeader">
                   {{
@@ -411,7 +435,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                })[1].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -426,7 +452,9 @@
                   })[1].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                })[1].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -445,7 +473,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                })[2].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -460,7 +490,9 @@
                   })[2].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                })[2].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -477,7 +509,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                })[3].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -492,7 +526,9 @@
                   })[3].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                })[3].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -509,7 +545,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                })[4].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -524,7 +562,9 @@
                   })[4].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                })[4].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -561,7 +601,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('nord stream') || newsItem.description.toLowerCase().includes('северный поток') || newsItem.description.toLowerCase().includes('журналист')
+                })[0].title } })" class="newsItem newsItemMain">
               <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
               <div class="newsVerticalFormat">
                 <span class="newsItemHeader">
@@ -595,7 +637,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('nord stream') || newsItem.description.toLowerCase().includes('северный поток') || newsItem.description.toLowerCase().includes('журналист')
+                })[1].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -629,7 +673,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('nord stream') || newsItem.description.toLowerCase().includes('северный поток') || newsItem.description.toLowerCase().includes('журналист')
+                })[2].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -661,7 +707,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('nord stream') || newsItem.description.toLowerCase().includes('северный поток') || newsItem.description.toLowerCase().includes('журналист')
+                })[3].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -693,7 +741,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('nord stream') || newsItem.description.toLowerCase().includes('северный поток') || newsItem.description.toLowerCase().includes('журналист')
+                })[4].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -745,7 +795,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.category.includes('general')
+                })[0].title } })" class="newsItem newsItemMain">
               <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
               <div class="newsVerticalFormat">
                 <span class="newsItemHeader">
@@ -779,7 +831,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.category.includes('general')
+                })[1].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -813,7 +867,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.category.includes('general')
+                })[2].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -845,7 +901,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.category.includes('general')
+                })[3].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -877,7 +935,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.category.includes('general')
+                })[4].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -929,7 +989,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('социал') || newsItem.description.toLowerCase().includes('президент') || newsItem.description.toLowerCase().includes('пенси') || newsItem.description.toLowerCase().includes('обществ')
+                })[0].title } })" class="newsItem newsItemMain">
               <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
               <div class="newsVerticalFormat">
                 <span class="newsItemHeader">
@@ -963,7 +1025,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('социал') || newsItem.description.toLowerCase().includes('президент') || newsItem.description.toLowerCase().includes('пенси') || newsItem.description.toLowerCase().includes('обществ')
+                })[1].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -997,7 +1061,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('социал') || newsItem.description.toLowerCase().includes('президент') || newsItem.description.toLowerCase().includes('пенси') || newsItem.description.toLowerCase().includes('обществ')
+                })[2].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1029,7 +1095,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('социал') || newsItem.description.toLowerCase().includes('президент') || newsItem.description.toLowerCase().includes('пенси') || newsItem.description.toLowerCase().includes('обществ')
+                })[3].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1061,7 +1129,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('социал') || newsItem.description.toLowerCase().includes('президент') || newsItem.description.toLowerCase().includes('пенси') || newsItem.description.toLowerCase().includes('обществ')
+                })[4].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1113,7 +1183,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                })[0].title } })" class="newsItem newsItemMain">
               <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
               <div class="newsVerticalFormat">
                 <span class="newsItemHeader">
@@ -1147,7 +1219,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                })[1].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1181,7 +1255,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                })[2].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1213,7 +1289,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                })[3].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1245,7 +1323,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                })[4].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1297,8 +1377,12 @@
             </div>
           </div>
           <div class="newsRow">
-            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
-              <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('норвеж') || newsItem.description.toLowerCase().includes('варшав') || newsItem.description.toLowerCase().includes('мир') || newsItem.description.toLowerCase().includes('стран')
+                })[0].title } })" class="newsItem newsItemMain">
+              <img class="newsItemMainImg" height="75%" width="50%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('норвеж') || newsItem.description.toLowerCase().includes('варшав') || newsItem.description.toLowerCase().includes('мир') || newsItem.description.toLowerCase().includes('стран')
+                })[0].source" alt="">
               <div class="newsVerticalFormat">
                 <span class="newsItemHeader">
                   {{
@@ -1331,7 +1415,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('норвеж') || newsItem.description.toLowerCase().includes('варшав') || newsItem.description.toLowerCase().includes('мир') || newsItem.description.toLowerCase().includes('стран')
+                })[1].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1346,7 +1432,9 @@
                   })[1].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('норвеж') || newsItem.description.toLowerCase().includes('варшав') || newsItem.description.toLowerCase().includes('мир') || newsItem.description.toLowerCase().includes('стран')
+                })[1].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -1365,7 +1453,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('норвеж') || newsItem.description.toLowerCase().includes('варшав') || newsItem.description.toLowerCase().includes('мир') || newsItem.description.toLowerCase().includes('стран')
+                })[2].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1380,7 +1470,9 @@
                   })[2].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('норвеж') || newsItem.description.toLowerCase().includes('варшав') || newsItem.description.toLowerCase().includes('мир') || newsItem.description.toLowerCase().includes('стран')
+                })[2].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -1397,7 +1489,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('норвеж') || newsItem.description.toLowerCase().includes('варшав') || newsItem.description.toLowerCase().includes('мир') || newsItem.description.toLowerCase().includes('стран')
+                })[3].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1412,7 +1506,9 @@
                   })[3].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('норвеж') || newsItem.description.toLowerCase().includes('варшав') || newsItem.description.toLowerCase().includes('мир') || newsItem.description.toLowerCase().includes('стран')
+                })[3].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -1429,7 +1525,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('норвеж') || newsItem.description.toLowerCase().includes('варшав') || newsItem.description.toLowerCase().includes('мир') || newsItem.description.toLowerCase().includes('стран')
+                })[4].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1444,7 +1542,9 @@
                   })[4].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('норвеж') || newsItem.description.toLowerCase().includes('варшав') || newsItem.description.toLowerCase().includes('мир') || newsItem.description.toLowerCase().includes('стран')
+                })[4].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -1481,8 +1581,12 @@
             </div>
           </div>
           <div class="newsRow">
-            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
-              <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('олимпий') || newsItem.description.toLowerCase().includes('футбол') || newsItem.description.toLowerCase().includes('волейбол') || newsItem.description.toLowerCase().includes('баскетболл')
+                })[0].title } })" class="newsItem newsItemMain">
+              <img class="newsItemMainImg" height="75%" width="50%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('олимпий') || newsItem.description.toLowerCase().includes('футбол') || newsItem.description.toLowerCase().includes('волейбол') || newsItem.description.toLowerCase().includes('баскетболл')
+                })[0].source" alt="">
               <div class="newsVerticalFormat">
                 <span class="newsItemHeader">
                   {{
@@ -1515,7 +1619,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('олимпий') || newsItem.description.toLowerCase().includes('футбол') || newsItem.description.toLowerCase().includes('волейбол') || newsItem.description.toLowerCase().includes('баскетболл')
+                })[1].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1530,7 +1636,9 @@
                   })[1].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('олимпий') || newsItem.description.toLowerCase().includes('футбол') || newsItem.description.toLowerCase().includes('волейбол') || newsItem.description.toLowerCase().includes('баскетболл')
+                })[1].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -1549,7 +1657,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('олимпий') || newsItem.description.toLowerCase().includes('футбол') || newsItem.description.toLowerCase().includes('волейбол') || newsItem.description.toLowerCase().includes('баскетболл')
+                })[2].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1564,7 +1674,9 @@
                   })[2].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('олимпий') || newsItem.description.toLowerCase().includes('футбол') || newsItem.description.toLowerCase().includes('волейбол') || newsItem.description.toLowerCase().includes('баскетболл')
+                })[2].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -1581,7 +1693,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('олимпий') || newsItem.description.toLowerCase().includes('футбол') || newsItem.description.toLowerCase().includes('волейбол') || newsItem.description.toLowerCase().includes('баскетболл')
+                })[3].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1596,7 +1710,9 @@
                   })[3].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('олимпий') || newsItem.description.toLowerCase().includes('футбол') || newsItem.description.toLowerCase().includes('волейбол') || newsItem.description.toLowerCase().includes('баскетболл')
+                })[3].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -1613,7 +1729,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('олимпий') || newsItem.description.toLowerCase().includes('футбол') || newsItem.description.toLowerCase().includes('волейбол') || newsItem.description.toLowerCase().includes('баскетболл')
+                })[4].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1628,7 +1746,9 @@
                   })[4].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('олимпий') || newsItem.description.toLowerCase().includes('футбол') || newsItem.description.toLowerCase().includes('волейбол') || newsItem.description.toLowerCase().includes('баскетболл')
+                })[4].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -1665,7 +1785,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('проишествие') || newsItem.description.toLowerCase().includes('землятресение') || newsItem.description.toLowerCase().includes('умер')
+                })[0].title } })" class="newsItem newsItemMain">
               <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
               <div class="newsVerticalFormat">
                 <span class="newsItemHeader">
@@ -1699,7 +1821,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('проишествие') || newsItem.description.toLowerCase().includes('землятресение') || newsItem.description.toLowerCase().includes('умер')
+                })[1].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1733,7 +1857,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('проишествие') || newsItem.description.toLowerCase().includes('землятресение') || newsItem.description.toLowerCase().includes('умер')
+                })[2].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1765,7 +1891,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('проишествие') || newsItem.description.toLowerCase().includes('землятресение') || newsItem.description.toLowerCase().includes('умер')
+                })[3].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1797,7 +1925,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('проишествие') || newsItem.description.toLowerCase().includes('землятресение') || newsItem.description.toLowerCase().includes('умер')
+                })[4].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1849,8 +1979,12 @@
             </div>
           </div>
           <div class="newsRow">
-            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
-              <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('сериал') || newsItem.description.toLowerCase().includes('кино') || newsItem.description.toLowerCase().includes('звезда') || newsItem.description.toLowerCase().includes('франшиза') || newsItem.description.toLowerCase().includes('премьера') || newsItem.description.toLowerCase().includes('акт')
+                })[0].title } })" class="newsItem newsItemMain">
+              <img class="newsItemMainImg" height="75%" width="50%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('сериал') || newsItem.description.toLowerCase().includes('кино') || newsItem.description.toLowerCase().includes('звезда') || newsItem.description.toLowerCase().includes('франшиза') || newsItem.description.toLowerCase().includes('премьера') || newsItem.description.toLowerCase().includes('акт')
+                })[0].source" alt="">
               <div class="newsVerticalFormat">
                 <span class="newsItemHeader">
                   {{
@@ -1883,7 +2017,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('сериал') || newsItem.description.toLowerCase().includes('кино') || newsItem.description.toLowerCase().includes('звезда') || newsItem.description.toLowerCase().includes('франшиза') || newsItem.description.toLowerCase().includes('премьера') || newsItem.description.toLowerCase().includes('акт')
+                })[1].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1898,7 +2034,9 @@
                   })[1].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('сериал') || newsItem.description.toLowerCase().includes('кино') || newsItem.description.toLowerCase().includes('звезда') || newsItem.description.toLowerCase().includes('франшиза') || newsItem.description.toLowerCase().includes('премьера') || newsItem.description.toLowerCase().includes('акт')
+                })[1].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -1917,7 +2055,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('сериал') || newsItem.description.toLowerCase().includes('кино') || newsItem.description.toLowerCase().includes('звезда') || newsItem.description.toLowerCase().includes('франшиза') || newsItem.description.toLowerCase().includes('премьера') || newsItem.description.toLowerCase().includes('акт')
+                })[2].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1932,7 +2072,9 @@
                   })[2].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('сериал') || newsItem.description.toLowerCase().includes('кино') || newsItem.description.toLowerCase().includes('звезда') || newsItem.description.toLowerCase().includes('франшиза') || newsItem.description.toLowerCase().includes('премьера') || newsItem.description.toLowerCase().includes('акт')
+                })[2].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -1949,7 +2091,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('сериал') || newsItem.description.toLowerCase().includes('кино') || newsItem.description.toLowerCase().includes('звезда') || newsItem.description.toLowerCase().includes('франшиза') || newsItem.description.toLowerCase().includes('премьера') || newsItem.description.toLowerCase().includes('акт')
+                })[3].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1964,7 +2108,9 @@
                   })[3].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('сериал') || newsItem.description.toLowerCase().includes('кино') || newsItem.description.toLowerCase().includes('звезда') || newsItem.description.toLowerCase().includes('франшиза') || newsItem.description.toLowerCase().includes('премьера') || newsItem.description.toLowerCase().includes('акт')
+                })[3].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -1981,7 +2127,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('сериал') || newsItem.description.toLowerCase().includes('кино') || newsItem.description.toLowerCase().includes('звезда') || newsItem.description.toLowerCase().includes('франшиза') || newsItem.description.toLowerCase().includes('премьера') || newsItem.description.toLowerCase().includes('акт')
+                })[4].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -1996,7 +2144,9 @@
                   })[4].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('сериал') || newsItem.description.toLowerCase().includes('кино') || newsItem.description.toLowerCase().includes('звезда') || newsItem.description.toLowerCase().includes('франшиза') || newsItem.description.toLowerCase().includes('премьера') || newsItem.description.toLowerCase().includes('акт')
+                })[4].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -2033,8 +2183,12 @@
             </div>
           </div>
           <div class="newsRow">
-            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
-              <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('xiaomi') || newsItem.description.toLowerCase().includes('samsung') || newsItem.description.toLowerCase().includes('планшет') || newsItem.description.toLowerCase().includes('фитнес-браслет') || newsItem.description.toLowerCase().includes('игров') || newsItem.description.toLowerCase().includes('игрок') || newsItem.description.toLowerCase().includes('разработчик') || newsItem.description.toLowerCase().includes('ios') || newsItem.description.toLowerCase().includes('android') || newsItem.description.toLowerCase().includes('навигатор') || newsItem.description.toLowerCase().includes('яндекс') || newsItem.description.toLowerCase().includes('активы') || newsItem.description.toLowerCase().includes('смартфон') || newsItem.description.toLowerCase().includes('часы') || newsItem.description.toLowerCase().includes('sony') || newsItem.description.toLowerCase().includes('mastercard') || newsItem.description.toLowerCase().includes('visa') || newsItem.description.toLowerCase().includes('игра') || newsItem.description.toLowerCase().includes('apple') || newsItem.description.toLowerCase().includes('google') || newsItem.description.toLowerCase().includes('nothing') || newsItem.description.toLowerCase().includes('microsoft') || newsItem.description.toLowerCase().includes('vivo') || newsItem.description.toLowerCase().includes('oppo') || newsItem.description.toLowerCase().includes('oneplus') || newsItem.description.toLowerCase().includes('realme') || newsItem.description.toLowerCase().includes('redmi') || newsItem.description.toLowerCase().includes('miui')
+                })[0].title } })" class="newsItem newsItemMain">
+              <img class="newsItemMainImg" height="75%" width="50%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('xiaomi') || newsItem.description.toLowerCase().includes('samsung') || newsItem.description.toLowerCase().includes('планшет') || newsItem.description.toLowerCase().includes('фитнес-браслет') || newsItem.description.toLowerCase().includes('игров') || newsItem.description.toLowerCase().includes('игрок') || newsItem.description.toLowerCase().includes('разработчик') || newsItem.description.toLowerCase().includes('ios') || newsItem.description.toLowerCase().includes('android') || newsItem.description.toLowerCase().includes('навигатор') || newsItem.description.toLowerCase().includes('яндекс') || newsItem.description.toLowerCase().includes('активы') || newsItem.description.toLowerCase().includes('смартфон') || newsItem.description.toLowerCase().includes('часы') || newsItem.description.toLowerCase().includes('sony') || newsItem.description.toLowerCase().includes('mastercard') || newsItem.description.toLowerCase().includes('visa') || newsItem.description.toLowerCase().includes('игра') || newsItem.description.toLowerCase().includes('apple') || newsItem.description.toLowerCase().includes('google') || newsItem.description.toLowerCase().includes('nothing') || newsItem.description.toLowerCase().includes('microsoft') || newsItem.description.toLowerCase().includes('vivo') || newsItem.description.toLowerCase().includes('oppo') || newsItem.description.toLowerCase().includes('oneplus') || newsItem.description.toLowerCase().includes('realme') || newsItem.description.toLowerCase().includes('redmi') || newsItem.description.toLowerCase().includes('miui')
+                })[0].source" alt="">
               <div class="newsVerticalFormat">
                 <span class="newsItemHeader">
                   {{
@@ -2067,7 +2221,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('xiaomi') || newsItem.description.toLowerCase().includes('samsung') || newsItem.description.toLowerCase().includes('планшет') || newsItem.description.toLowerCase().includes('фитнес-браслет') || newsItem.description.toLowerCase().includes('игров') || newsItem.description.toLowerCase().includes('игрок') || newsItem.description.toLowerCase().includes('разработчик') || newsItem.description.toLowerCase().includes('ios') || newsItem.description.toLowerCase().includes('android') || newsItem.description.toLowerCase().includes('навигатор') || newsItem.description.toLowerCase().includes('яндекс') || newsItem.description.toLowerCase().includes('активы') || newsItem.description.toLowerCase().includes('смартфон') || newsItem.description.toLowerCase().includes('часы') || newsItem.description.toLowerCase().includes('sony') || newsItem.description.toLowerCase().includes('mastercard') || newsItem.description.toLowerCase().includes('visa') || newsItem.description.toLowerCase().includes('игра') || newsItem.description.toLowerCase().includes('apple') || newsItem.description.toLowerCase().includes('google') || newsItem.description.toLowerCase().includes('nothing') || newsItem.description.toLowerCase().includes('microsoft') || newsItem.description.toLowerCase().includes('vivo') || newsItem.description.toLowerCase().includes('oppo') || newsItem.description.toLowerCase().includes('oneplus') || newsItem.description.toLowerCase().includes('realme') || newsItem.description.toLowerCase().includes('redmi') || newsItem.description.toLowerCase().includes('miui')
+                })[1].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -2082,7 +2238,9 @@
                   })[1].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('xiaomi') || newsItem.description.toLowerCase().includes('samsung') || newsItem.description.toLowerCase().includes('планшет') || newsItem.description.toLowerCase().includes('фитнес-браслет') || newsItem.description.toLowerCase().includes('игров') || newsItem.description.toLowerCase().includes('игрок') || newsItem.description.toLowerCase().includes('разработчик') || newsItem.description.toLowerCase().includes('ios') || newsItem.description.toLowerCase().includes('android') || newsItem.description.toLowerCase().includes('навигатор') || newsItem.description.toLowerCase().includes('яндекс') || newsItem.description.toLowerCase().includes('активы') || newsItem.description.toLowerCase().includes('смартфон') || newsItem.description.toLowerCase().includes('часы') || newsItem.description.toLowerCase().includes('sony') || newsItem.description.toLowerCase().includes('mastercard') || newsItem.description.toLowerCase().includes('visa') || newsItem.description.toLowerCase().includes('игра') || newsItem.description.toLowerCase().includes('apple') || newsItem.description.toLowerCase().includes('google') || newsItem.description.toLowerCase().includes('nothing') || newsItem.description.toLowerCase().includes('microsoft') || newsItem.description.toLowerCase().includes('vivo') || newsItem.description.toLowerCase().includes('oppo') || newsItem.description.toLowerCase().includes('oneplus') || newsItem.description.toLowerCase().includes('realme') || newsItem.description.toLowerCase().includes('redmi') || newsItem.description.toLowerCase().includes('miui')
+                })[1].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -2101,7 +2259,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('xiaomi') || newsItem.description.toLowerCase().includes('samsung') || newsItem.description.toLowerCase().includes('планшет') || newsItem.description.toLowerCase().includes('фитнес-браслет') || newsItem.description.toLowerCase().includes('игров') || newsItem.description.toLowerCase().includes('игрок') || newsItem.description.toLowerCase().includes('разработчик') || newsItem.description.toLowerCase().includes('ios') || newsItem.description.toLowerCase().includes('android') || newsItem.description.toLowerCase().includes('навигатор') || newsItem.description.toLowerCase().includes('яндекс') || newsItem.description.toLowerCase().includes('активы') || newsItem.description.toLowerCase().includes('смартфон') || newsItem.description.toLowerCase().includes('часы') || newsItem.description.toLowerCase().includes('sony') || newsItem.description.toLowerCase().includes('mastercard') || newsItem.description.toLowerCase().includes('visa') || newsItem.description.toLowerCase().includes('игра') || newsItem.description.toLowerCase().includes('apple') || newsItem.description.toLowerCase().includes('google') || newsItem.description.toLowerCase().includes('nothing') || newsItem.description.toLowerCase().includes('microsoft') || newsItem.description.toLowerCase().includes('vivo') || newsItem.description.toLowerCase().includes('oppo') || newsItem.description.toLowerCase().includes('oneplus') || newsItem.description.toLowerCase().includes('realme') || newsItem.description.toLowerCase().includes('redmi') || newsItem.description.toLowerCase().includes('miui')
+                })[2].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -2116,7 +2276,9 @@
                   })[2].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('xiaomi') || newsItem.description.toLowerCase().includes('samsung') || newsItem.description.toLowerCase().includes('планшет') || newsItem.description.toLowerCase().includes('фитнес-браслет') || newsItem.description.toLowerCase().includes('игров') || newsItem.description.toLowerCase().includes('игрок') || newsItem.description.toLowerCase().includes('разработчик') || newsItem.description.toLowerCase().includes('ios') || newsItem.description.toLowerCase().includes('android') || newsItem.description.toLowerCase().includes('навигатор') || newsItem.description.toLowerCase().includes('яндекс') || newsItem.description.toLowerCase().includes('активы') || newsItem.description.toLowerCase().includes('смартфон') || newsItem.description.toLowerCase().includes('часы') || newsItem.description.toLowerCase().includes('sony') || newsItem.description.toLowerCase().includes('mastercard') || newsItem.description.toLowerCase().includes('visa') || newsItem.description.toLowerCase().includes('игра') || newsItem.description.toLowerCase().includes('apple') || newsItem.description.toLowerCase().includes('google') || newsItem.description.toLowerCase().includes('nothing') || newsItem.description.toLowerCase().includes('microsoft') || newsItem.description.toLowerCase().includes('vivo') || newsItem.description.toLowerCase().includes('oppo') || newsItem.description.toLowerCase().includes('oneplus') || newsItem.description.toLowerCase().includes('realme') || newsItem.description.toLowerCase().includes('redmi') || newsItem.description.toLowerCase().includes('miui')
+                })[2].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -2133,7 +2295,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('xiaomi') || newsItem.description.toLowerCase().includes('samsung') || newsItem.description.toLowerCase().includes('планшет') || newsItem.description.toLowerCase().includes('фитнес-браслет') || newsItem.description.toLowerCase().includes('игров') || newsItem.description.toLowerCase().includes('игрок') || newsItem.description.toLowerCase().includes('разработчик') || newsItem.description.toLowerCase().includes('ios') || newsItem.description.toLowerCase().includes('android') || newsItem.description.toLowerCase().includes('навигатор') || newsItem.description.toLowerCase().includes('яндекс') || newsItem.description.toLowerCase().includes('активы') || newsItem.description.toLowerCase().includes('смартфон') || newsItem.description.toLowerCase().includes('часы') || newsItem.description.toLowerCase().includes('sony') || newsItem.description.toLowerCase().includes('mastercard') || newsItem.description.toLowerCase().includes('visa') || newsItem.description.toLowerCase().includes('игра') || newsItem.description.toLowerCase().includes('apple') || newsItem.description.toLowerCase().includes('google') || newsItem.description.toLowerCase().includes('nothing') || newsItem.description.toLowerCase().includes('microsoft') || newsItem.description.toLowerCase().includes('vivo') || newsItem.description.toLowerCase().includes('oppo') || newsItem.description.toLowerCase().includes('oneplus') || newsItem.description.toLowerCase().includes('realme') || newsItem.description.toLowerCase().includes('redmi') || newsItem.description.toLowerCase().includes('miui')
+                })[3].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -2148,7 +2312,9 @@
                   })[3].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('xiaomi') || newsItem.description.toLowerCase().includes('samsung') || newsItem.description.toLowerCase().includes('планшет') || newsItem.description.toLowerCase().includes('фитнес-браслет') || newsItem.description.toLowerCase().includes('игров') || newsItem.description.toLowerCase().includes('игрок') || newsItem.description.toLowerCase().includes('разработчик') || newsItem.description.toLowerCase().includes('ios') || newsItem.description.toLowerCase().includes('android') || newsItem.description.toLowerCase().includes('навигатор') || newsItem.description.toLowerCase().includes('яндекс') || newsItem.description.toLowerCase().includes('активы') || newsItem.description.toLowerCase().includes('смартфон') || newsItem.description.toLowerCase().includes('часы') || newsItem.description.toLowerCase().includes('sony') || newsItem.description.toLowerCase().includes('mastercard') || newsItem.description.toLowerCase().includes('visa') || newsItem.description.toLowerCase().includes('игра') || newsItem.description.toLowerCase().includes('apple') || newsItem.description.toLowerCase().includes('google') || newsItem.description.toLowerCase().includes('nothing') || newsItem.description.toLowerCase().includes('microsoft') || newsItem.description.toLowerCase().includes('vivo') || newsItem.description.toLowerCase().includes('oppo') || newsItem.description.toLowerCase().includes('oneplus') || newsItem.description.toLowerCase().includes('realme') || newsItem.description.toLowerCase().includes('redmi') || newsItem.description.toLowerCase().includes('miui')
+                })[3].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -2165,7 +2331,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('xiaomi') || newsItem.description.toLowerCase().includes('samsung') || newsItem.description.toLowerCase().includes('планшет') || newsItem.description.toLowerCase().includes('фитнес-браслет') || newsItem.description.toLowerCase().includes('игров') || newsItem.description.toLowerCase().includes('игрок') || newsItem.description.toLowerCase().includes('разработчик') || newsItem.description.toLowerCase().includes('ios') || newsItem.description.toLowerCase().includes('android') || newsItem.description.toLowerCase().includes('навигатор') || newsItem.description.toLowerCase().includes('яндекс') || newsItem.description.toLowerCase().includes('активы') || newsItem.description.toLowerCase().includes('смартфон') || newsItem.description.toLowerCase().includes('часы') || newsItem.description.toLowerCase().includes('sony') || newsItem.description.toLowerCase().includes('mastercard') || newsItem.description.toLowerCase().includes('visa') || newsItem.description.toLowerCase().includes('игра') || newsItem.description.toLowerCase().includes('apple') || newsItem.description.toLowerCase().includes('google') || newsItem.description.toLowerCase().includes('nothing') || newsItem.description.toLowerCase().includes('microsoft') || newsItem.description.toLowerCase().includes('vivo') || newsItem.description.toLowerCase().includes('oppo') || newsItem.description.toLowerCase().includes('oneplus') || newsItem.description.toLowerCase().includes('realme') || newsItem.description.toLowerCase().includes('redmi') || newsItem.description.toLowerCase().includes('miui')
+                })[4].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                     news.filter(newsItem => {
@@ -2180,7 +2348,9 @@
                     })[4].description.substring(0, 45)
                   }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('xiaomi') || newsItem.description.toLowerCase().includes('samsung') || newsItem.description.toLowerCase().includes('планшет') || newsItem.description.toLowerCase().includes('фитнес-браслет') || newsItem.description.toLowerCase().includes('игров') || newsItem.description.toLowerCase().includes('игрок') || newsItem.description.toLowerCase().includes('разработчик') || newsItem.description.toLowerCase().includes('ios') || newsItem.description.toLowerCase().includes('android') || newsItem.description.toLowerCase().includes('навигатор') || newsItem.description.toLowerCase().includes('яндекс') || newsItem.description.toLowerCase().includes('активы') || newsItem.description.toLowerCase().includes('смартфон') || newsItem.description.toLowerCase().includes('часы') || newsItem.description.toLowerCase().includes('sony') || newsItem.description.toLowerCase().includes('mastercard') || newsItem.description.toLowerCase().includes('visa') || newsItem.description.toLowerCase().includes('игра') || newsItem.description.toLowerCase().includes('apple') || newsItem.description.toLowerCase().includes('google') || newsItem.description.toLowerCase().includes('nothing') || newsItem.description.toLowerCase().includes('microsoft') || newsItem.description.toLowerCase().includes('vivo') || newsItem.description.toLowerCase().includes('oppo') || newsItem.description.toLowerCase().includes('oneplus') || newsItem.description.toLowerCase().includes('realme') || newsItem.description.toLowerCase().includes('redmi') || newsItem.description.toLowerCase().includes('miui')
+                })[4].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -2217,7 +2387,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('учен')
+                })[0].title } })" class="newsItem newsItemMain">
               <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
               <div class="newsVerticalFormat">
                 <span class="newsItemHeader">
@@ -2251,7 +2423,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('учен')
+                })[1].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -2285,7 +2459,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('учен')
+                })[2].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -2317,7 +2493,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('учен')
+                })[3].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -2349,18 +2527,20 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('учен')
+                })[4].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
-                    return newsItem.category.includes("general")
+                    return newsItem.description.toLowerCase().includes("учен")
                   })[4].title
                 }}
               </span>
               <span>
                 {{
                   news.filter(newsItem => {
-                    return newsItem.category.includes("general")
+                    return newsItem.description.toLowerCase().includes("учен")
                   })[4].description.substring(0, 45)
                 }}
               </span>
@@ -2401,8 +2581,12 @@
             </div>
           </div>
           <div class="newsRow">
-            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
-              <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('Skoda') || newsItem.description.toLowerCase().includes('Toyota') || newsItem.description.toLowerCase().includes('АвтоВАЗ') || newsItem.description.toLowerCase().includes('mercedes') || newsItem.description.toLowerCase().includes('dacia') || newsItem.description.toLowerCase().includes('lada') || newsItem.description.toLowerCase().includes('Tesla') || newsItem.description.toLowerCase().includes('пикап') || newsItem.description.toLowerCase().includes('Hyundai') || newsItem.description.toLowerCase().includes('Kia') || newsItem.description.toLowerCase().includes('Haval')
+                })[0].title } })" class="newsItem newsItemMain">
+              <img class="newsItemMainImg" height="75%" width="50%" :src="news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes('Skoda') || newsItem.description.toLowerCase().includes('Toyota') || newsItem.description.toLowerCase().includes('АвтоВАЗ') || newsItem.description.toLowerCase().includes('mercedes') || newsItem.description.toLowerCase().includes('dacia') || newsItem.description.toLowerCase().includes('lada') || newsItem.description.toLowerCase().includes('Tesla') || newsItem.description.toLowerCase().includes('пикап') || newsItem.description.toLowerCase().includes('Hyundai') || newsItem.description.toLowerCase().includes('Kia') || newsItem.description.toLowerCase().includes('Haval')
+                  })[0].source" alt="">
               <div class="newsVerticalFormat">
                 <span class="newsItemHeader">
                   {{
@@ -2435,7 +2619,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('Skoda') || newsItem.description.toLowerCase().includes('Toyota') || newsItem.description.toLowerCase().includes('АвтоВАЗ') || newsItem.description.toLowerCase().includes('mercedes') || newsItem.description.toLowerCase().includes('dacia') || newsItem.description.toLowerCase().includes('lada') || newsItem.description.toLowerCase().includes('Tesla') || newsItem.description.toLowerCase().includes('пикап') || newsItem.description.toLowerCase().includes('Hyundai') || newsItem.description.toLowerCase().includes('Kia') || newsItem.description.toLowerCase().includes('Haval')
+                })[1].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -2450,7 +2636,9 @@
                   })[1].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes('Skoda') || newsItem.description.toLowerCase().includes('Toyota') || newsItem.description.toLowerCase().includes('АвтоВАЗ') || newsItem.description.toLowerCase().includes('mercedes') || newsItem.description.toLowerCase().includes('dacia') || newsItem.description.toLowerCase().includes('lada') || newsItem.description.toLowerCase().includes('Tesla') || newsItem.description.toLowerCase().includes('пикап') || newsItem.description.toLowerCase().includes('Hyundai') || newsItem.description.toLowerCase().includes('Kia') || newsItem.description.toLowerCase().includes('Haval')
+                  })[1].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -2469,7 +2657,9 @@
             </div>
           </div>
           <div class="newsRow">
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('Skoda') || newsItem.description.toLowerCase().includes('Toyota') || newsItem.description.toLowerCase().includes('АвтоВАЗ') || newsItem.description.toLowerCase().includes('mercedes') || newsItem.description.toLowerCase().includes('dacia') || newsItem.description.toLowerCase().includes('lada') || newsItem.description.toLowerCase().includes('Tesla') || newsItem.description.toLowerCase().includes('пикап') || newsItem.description.toLowerCase().includes('Hyundai') || newsItem.description.toLowerCase().includes('Kia') || newsItem.description.toLowerCase().includes('Haval')
+                })[2].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -2484,7 +2674,9 @@
                   })[2].description.substring(0, 45)
                 }}
               </span>
-              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <img width="100%" :src="news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes('Skoda') || newsItem.description.toLowerCase().includes('Toyota') || newsItem.description.toLowerCase().includes('АвтоВАЗ') || newsItem.description.toLowerCase().includes('mercedes') || newsItem.description.toLowerCase().includes('dacia') || newsItem.description.toLowerCase().includes('lada') || newsItem.description.toLowerCase().includes('Tesla') || newsItem.description.toLowerCase().includes('пикап') || newsItem.description.toLowerCase().includes('Hyundai') || newsItem.description.toLowerCase().includes('Kia') || newsItem.description.toLowerCase().includes('Haval')
+                  })[2].source" alt="">
               <div class="newsItemFooter">
                 <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
                 <span>
@@ -2501,7 +2693,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('Skoda') || newsItem.description.toLowerCase().includes('Toyota') || newsItem.description.toLowerCase().includes('АвтоВАЗ') || newsItem.description.toLowerCase().includes('mercedes') || newsItem.description.toLowerCase().includes('dacia') || newsItem.description.toLowerCase().includes('lada') || newsItem.description.toLowerCase().includes('Tesla') || newsItem.description.toLowerCase().includes('пикап') || newsItem.description.toLowerCase().includes('Hyundai') || newsItem.description.toLowerCase().includes('Kia') || newsItem.description.toLowerCase().includes('Haval')
+                })[3].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -2533,7 +2727,9 @@
                 </span>
               </div>
             </div>
-            <div class="newsItem">
+            <div @click="$router.push({ name: 'NewsItem', query: { title: news.filter(newsItem => {
+                  return newsItem.description.toLowerCase().includes('Skoda') || newsItem.description.toLowerCase().includes('Toyota') || newsItem.description.toLowerCase().includes('АвтоВАЗ') || newsItem.description.toLowerCase().includes('mercedes') || newsItem.description.toLowerCase().includes('dacia') || newsItem.description.toLowerCase().includes('lada') || newsItem.description.toLowerCase().includes('Tesla') || newsItem.description.toLowerCase().includes('пикап') || newsItem.description.toLowerCase().includes('Hyundai') || newsItem.description.toLowerCase().includes('Kia') || newsItem.description.toLowerCase().includes('Haval')
+                })[4].title } })" class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
@@ -2570,169 +2766,163 @@
         
       </div>
       <div class="ads">
-        <div class="adsItem">
-          <div class="adsItemHeader">
-            <div class="adsItemHeaderRow">
-              <span class="adsItemHeaderTitle">
-                Сравниваем лучшие курсы в IT
-              </span>
-              <span class="material-icons">
-                more_vert
-              </span>
-            </div>
-            <div class="adsItemHeaderRow">
-              <span class="adsItemHeaderPromouter">
-                Яндекс практикум
-              </span>
-              <span class="material-icons adsItemHeaderPromouter adsItemHeaderPromouterSeparator">
-                fiber_manual_record
-              </span>
-              <span class="adsItemHeaderPromouter">
-                Реклама
-              </span>
-            </div>
-          </div>
-          <!-- <img width="150%" height="75%" src="https://avatars.mds.yandex.net/get-practicum/5750069/2a0000017bf1fd973b81bfb80d33c3cbe07c/optimize" alt=""> -->
-          <div class="adsItemImg">
+                <div class="adsItem">
+                <div class="adsItemHeader">
+                    <div class="adsItemHeaderRow">
+                    <span class="adsItemHeaderTitle">
+                        Как писать в Дзен
+                    </span>
+                    <span class="material-icons">
+                        more_vert
+                    </span>
+                    </div>
+                    <div class="adsItemHeaderRow">
+                    <span class="adsItemHeaderPromouter">
+                        Яндекс Дзен
+                    </span>
+                    <span class="material-icons adsItemHeaderPromouter adsItemHeaderPromouterSeparator">
+                        fiber_manual_record
+                    </span>
+                    <span class="adsItemHeaderPromouter">
+                        Реклама
+                    </span>
+                    </div>
+                </div>
+                <div class="adsItemImg dzen">
+                </div>
+                </div>
+                <div class="adsItem">
+                <div class="adsItemHeader">
+                    <div class="adsItemHeaderRow">
+                    <span class="adsItemHeaderTitle">
+                        Колледж нового уровня
+                    </span>
+                    <span class="material-icons">
+                        more_vert
+                    </span>
+                    </div>
+                    <div class="adsItemHeaderRow">
+                    <span class="adsItemHeaderPromouter">
+                        Колледж нового уровня
+                    </span>
+                    <span class="material-icons adsItemHeaderPromouter adsItemHeaderPromouterSeparator">
+                        fiber_manual_record
+                    </span>
+                    <span class="adsItemHeaderPromouter">
+                        Реклама
+                    </span>
+                    </div>
+                </div>
+                <div class="adsItemImg college">
 
-          </div>
-        </div>
-        <div class="adsItem">
-          <div class="adsItemHeader">
-            <div class="adsItemHeaderRow">
-              <span class="adsItemHeaderTitle">
-                Сравниваем лучшие курсы в IT
-              </span>
-              <span class="material-icons">
-                more_vert
-              </span>
-            </div>
-            <div class="adsItemHeaderRow">
-              <span class="adsItemHeaderPromouter">
-                Яндекс практикум
-              </span>
-              <span class="material-icons adsItemHeaderPromouter adsItemHeaderPromouterSeparator">
-                fiber_manual_record
-              </span>
-              <span class="adsItemHeaderPromouter">
-                Реклама
-              </span>
-            </div>
-          </div>
-          <!-- <img width="150%" height="75%" src="https://avatars.mds.yandex.net/get-practicum/5750069/2a0000017bf1fd973b81bfb80d33c3cbe07c/optimize" alt=""> -->
-          <div class="adsItemImg">
+                </div>
+                </div>
+                <div class="adsItem">
+                <div class="adsItemHeader">
+                    <div class="adsItemHeaderRow">
+                    <span class="adsItemHeaderTitle">
+                        Отзовик всех курсов в IT и digital
+                    </span>
+                    <span class="material-icons">
+                        more_vert
+                    </span>
+                    </div>
+                    <div class="adsItemHeaderRow">
+                    <span class="adsItemHeaderPromouter">
+                        it
+                    </span>
+                    <span class="material-icons adsItemHeaderPromouter adsItemHeaderPromouterSeparator">
+                        fiber_manual_record
+                    </span>
+                    <span class="adsItemHeaderPromouter">
+                        Реклама
+                    </span>
+                    </div>
+                </div>
+                <div class="adsItemImg it">
 
-          </div>
-        </div>
-        <div class="adsItem">
-          <div class="adsItemHeader">
-            <div class="adsItemHeaderRow">
-              <span class="adsItemHeaderTitle">
-                Сравниваем лучшие курсы в IT
-              </span>
-              <span class="material-icons">
-                more_vert
-              </span>
-            </div>
-            <div class="adsItemHeaderRow">
-              <span class="adsItemHeaderPromouter">
-                Яндекс практикум
-              </span>
-              <span class="material-icons adsItemHeaderPromouter adsItemHeaderPromouterSeparator">
-                fiber_manual_record
-              </span>
-              <span class="adsItemHeaderPromouter">
-                Реклама
-              </span>
-            </div>
-          </div>
-          <!-- <img width="150%" height="75%" src="https://avatars.mds.yandex.net/get-practicum/5750069/2a0000017bf1fd973b81bfb80d33c3cbe07c/optimize" alt=""> -->
-          <div class="adsItemImg">
+                </div>
+                </div>
+                <div class="adsItem">
+                <div class="adsItemHeader">
+                    <div class="adsItemHeaderRow">
+                    <span class="adsItemHeaderTitle">
+                        Всё о профессии "Аналитик данных" с нуля
+                    </span>
+                    <span class="material-icons">
+                        more_vert
+                    </span>
+                    </div>
+                    <div class="adsItemHeaderRow">
+                    <span class="adsItemHeaderPromouter">
+                        bigdata
+                    </span>
+                    <span class="material-icons adsItemHeaderPromouter adsItemHeaderPromouterSeparator">
+                        fiber_manual_record
+                    </span>
+                    <span class="adsItemHeaderPromouter">
+                        Реклама
+                    </span>
+                    </div>
+                </div>
+                <div class="adsItemImg bigData">
 
-          </div>
-        </div>
-        <div class="adsItem">
-          <div class="adsItemHeader">
-            <div class="adsItemHeaderRow">
-              <span class="adsItemHeaderTitle">
-                Сравниваем лучшие курсы в IT
-              </span>
-              <span class="material-icons">
-                more_vert
-              </span>
-            </div>
-            <div class="adsItemHeaderRow">
-              <span class="adsItemHeaderPromouter">
-                Яндекс практикум
-              </span>
-              <span class="material-icons adsItemHeaderPromouter adsItemHeaderPromouterSeparator">
-                fiber_manual_record
-              </span>
-              <span class="adsItemHeaderPromouter">
-                Реклама
-              </span>
-            </div>
-          </div>
-          <!-- <img width="150%" height="75%" src="https://avatars.mds.yandex.net/get-practicum/5750069/2a0000017bf1fd973b81bfb80d33c3cbe07c/optimize" alt=""> -->
-          <div class="adsItemImg">
+                </div>
+                </div>
+                <div class="adsItem">
+                <div class="adsItemHeader">
+                    <div class="adsItemHeaderRow">
+                    <span class="adsItemHeaderTitle">
+                        Профессия SMM менеджер
+                    </span>
+                    <span class="material-icons">
+                        more_vert
+                    </span>
+                    </div>
+                    <div class="adsItemHeaderRow">
+                    <span class="adsItemHeaderPromouter">
+                        smm
+                    </span>
+                    <span class="material-icons adsItemHeaderPromouter adsItemHeaderPromouterSeparator">
+                        fiber_manual_record
+                    </span>
+                    <span class="adsItemHeaderPromouter">
+                        Реклама
+                    </span>
+                    </div>
+                </div>
+                <div class="adsItemImg smm">
 
-          </div>
-        </div>
-        <div class="adsItem">
-          <div class="adsItemHeader">
-            <div class="adsItemHeaderRow">
-              <span class="adsItemHeaderTitle">
-                Сравниваем лучшие курсы в IT
-              </span>
-              <span class="material-icons">
-                more_vert
-              </span>
-            </div>
-            <div class="adsItemHeaderRow">
-              <span class="adsItemHeaderPromouter">
-                Яндекс практикум
-              </span>
-              <span class="material-icons adsItemHeaderPromouter adsItemHeaderPromouterSeparator">
-                fiber_manual_record
-              </span>
-              <span class="adsItemHeaderPromouter">
-                Реклама
-              </span>
-            </div>
-          </div>
-          <!-- <img width="150%" height="75%" src="https://avatars.mds.yandex.net/get-practicum/5750069/2a0000017bf1fd973b81bfb80d33c3cbe07c/optimize" alt=""> -->
-          <div class="adsItemImg">
+                </div>
+                </div>
+                <div class="adsItem">
+                <div class="adsItemHeader">
+                    <div class="adsItemHeaderRow">
+                    <span class="adsItemHeaderTitle">
+                        Сравниваем лучшие курсы в IT
+                    </span>
+                    <span class="material-icons">
+                        more_vert
+                    </span>
+                    </div>
+                    <div class="adsItemHeaderRow">
+                    <span class="adsItemHeaderPromouter">
+                        Яндекс практикум
+                    </span>
+                    <span class="material-icons adsItemHeaderPromouter adsItemHeaderPromouterSeparator">
+                        fiber_manual_record
+                    </span>
+                    <span class="adsItemHeaderPromouter">
+                        Реклама
+                    </span>
+                    </div>
+                </div>
+                <!-- <img width="150%" height="75%" src="https://avatars.mds.yandex.net/get-practicum/5750069/2a0000017bf1fd973b81bfb80d33c3cbe07c/optimize" alt=""> -->
+                <div class="adsItemImg">
 
-          </div>
-        </div>
-        <div class="adsItem">
-          <div class="adsItemHeader">
-            <div class="adsItemHeaderRow">
-              <span class="adsItemHeaderTitle">
-                Сравниваем лучшие курсы в IT
-              </span>
-              <span class="material-icons">
-                more_vert
-              </span>
+                </div>
+                </div>
             </div>
-            <div class="adsItemHeaderRow">
-              <span class="adsItemHeaderPromouter">
-                Яндекс практикум
-              </span>
-              <span class="material-icons adsItemHeaderPromouter adsItemHeaderPromouterSeparator">
-                fiber_manual_record
-              </span>
-              <span class="adsItemHeaderPromouter">
-                Реклама
-              </span>
-            </div>
-          </div>
-          <!-- <img width="150%" height="75%" src="https://avatars.mds.yandex.net/get-practicum/5750069/2a0000017bf1fd973b81bfb80d33c3cbe07c/optimize" alt=""> -->
-          <div class="adsItemImg">
-
-          </div>
-        </div>
-      </div>
     </div>
     <Footer />
   </div>
@@ -2741,6 +2931,8 @@
 <script>
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
+
+import axios from 'axios'
 
 export default {
   name: 'Home',
@@ -2776,6 +2968,41 @@ export default {
     .then(async result => {
       console.log(`JSON.parse(result).data: ${JSON.parse(result).data.length}`)
       this.news = JSON.parse(result).data
+      setTimeout(() => {
+        this.news.map((newsItem) => {
+          fetch(`http://localhost:4000/data?title=${newsItem.title.split(' ')[0]}`, {
+            mode: 'cors',
+            method: 'GET'
+          }).then(response => response.body).then(rb  => {
+            const reader = rb.getReader()
+            return new ReadableStream({
+              start(controller) {
+                function push() {
+                  reader.read().then( ({done, value}) => {
+                    if (done) {
+                      console.log('done', done);
+                      controller.close();
+                      return;
+                    }
+                    controller.enqueue(value);
+                    console.log(done, value);
+                    push();
+                  })
+                }
+                push();
+              }
+            });
+          }).then(stream => {
+            return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+          })
+          .then(result => {
+            console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
+            newsItem.source = JSON.parse(result).source
+            // newsItem.source = this.getPreview(newsItem.title.split(' ')[0])
+          })
+        })
+      }, 1000)
+      
     })
   },
   data(){
@@ -2794,8 +3021,55 @@ export default {
   methods: {
     changeRubricHandler(newRubric){
       this.rubric = newRubric
+    },
+    getPreview(title){
       
-    }
+      // axios.get(`https://serpapi.com/search.json?q=${title}&tbm=isch&ijn=0&api_key=40b83165cf64850ef67c706e34f3351c5d37fc9c9e2ad8f1b9fac993cf96b949`,
+      // {
+      //   headers: {
+      //     'Content-Type': 'text/plain',
+      //     'Access-Control-Allow-Origin': '*',
+      //     'Access-Control-Allow-Credentials': true,
+      //     "Access-Control-Allow-Headers": "X-Requested-With, X-Access-Token, X-Socket-ID, Content-Type",
+      //     "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+      //   }
+      // }).then(response => {
+      //   return response.data.suggested_searches[0].thumbnail
+      // }).catch(e => {
+      //   console.log("ошибка зароса на картинку")
+      // })
+
+      fetch(`http://localhost:4000/data?title=${title}`, {
+        mode: 'cors',
+        method: 'GET'
+      }).then(response => response.body).then(rb  => {
+        const reader = rb.getReader()
+        return new ReadableStream({
+          start(controller) {
+            function push() {
+              reader.read().then( ({done, value}) => {
+                if (done) {
+                  console.log('done', done);
+                  controller.close();
+                  return;
+                }
+                controller.enqueue(value);
+                console.log(done, value);
+                push();
+              })
+            }
+            push();
+          }
+        });
+      }).then(stream => {
+        return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+      })
+      .then(result => {
+        console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
+        return JSON.parse(result).source
+      })
+
+    },
   },
   components: {
     Header,
@@ -2893,6 +3167,26 @@ export default {
     margin: 0px 15px;
     height: 35px;
   }
+
+  .dzen {
+        background-image: url('https://thumb.tildacdn.com/tild3039-3831-4365-a538-363861333862/-/resize/594x/-/format/webp/illustration.png') !important;
+    }
+
+    .college {
+        background-image: url('https://ithub.ru/vardata/cache/resized/modules/dynalenta/files/29/2021/08/33/3f09609234f7bae282313/W274_H274_Ocenter.jpg') !important;
+    }
+
+    .it {
+        background-image: url('https://tutortop.ru/wp-content/themes/tutortop/img/bg.svg') !important;
+    }
+
+    .bigData {
+        background-image: url('https://thumb.tildacdn.com/tild6430-3137-4637-b931-373935646663/-/resize/105x/-/format/webp/Mask_Group.png') !important;
+    }
+
+    .smm {
+        background-image: url('https://imba.ru/theme_imba/static/src/img/other/im-learn.png') !important;
+    }
 
   .ads {
     box-sizing: border-box;

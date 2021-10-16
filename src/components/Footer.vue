@@ -38,7 +38,7 @@
                 </div>
             </div>
             <span class="footerLink">
-                © 2021 Яндекс
+                © 2021 newerse
             </span>
         </div>
     </div>
