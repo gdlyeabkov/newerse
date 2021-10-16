@@ -353,1623 +353,1659 @@
             </div>
           </div>
         </div>
-        <div class="newsRubric">
-          <span class="newsRubricHeader">
-            Интересное
-          </span>
-          <div class="newsRubricTag">
-            Театры
+        <div v-if="news.filter(newsItem => {
+          return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+        }).length >= 5">
+          <div class="newsRubric">
+            <span class="newsRubricHeader">
+              Интересное
+            </span>
+            <div class="newsRubricTag">
+              Театры
+            </div>
+            <div class="newsRubricTag">
+              Музыка
+            </div>
+            <div class="newsRubricTag">
+              Кино
+            </div>
           </div>
-          <div class="newsRubricTag">
-            Музыка
-          </div>
-          <div class="newsRubricTag">
-            Кино
-          </div>
-        </div>
-        <div class="newsRow">
-          <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
-            <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsVerticalFormat">
+          <div class="newsRow">
+            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
+              <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsVerticalFormat">
+                <span class="newsItemHeader">
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                    })[0].title
+                  }}
+                </span>
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                    })[0].description.substring(0, 45)
+                  }}
+                </span>
+              </div>
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                    })[0].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                      })[0].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[10].title
+                    return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                  })[1].title
                 }}
               </span>
               <span>
                 {{
                   news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[10].description.substring(0, 45)
+                    return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                  })[1].description.substring(0, 45)
                 }}
               </span>
-            </div>
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[10].author ?
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
                     news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[10].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
+                      return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                    })[1].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                      })[1].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
           </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[11].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[11].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[11].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[11].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="newsRow">
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[12].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[12].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[12].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[12].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[13].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[13].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[13].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[13].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[14].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[14].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[14].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[14].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="newsRubric">
-          <span class="newsRubricHeader">
-            Политика
-          </span>
-          <div class="newsRubricTag">
-            Театры
-          </div>
-          <div class="newsRubricTag">
-            Музыка
-          </div>
-          <div class="newsRubricTag">
-            Кино
-          </div>
-        </div>
-        <div class="newsRow">
-          <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
-            <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsVerticalFormat">
+          <div class="newsRow">
+            <div class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
-                    return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
-                  })[0].title
+                    return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                  })[2].title
                 }}
               </span>
               <span>
                 {{
                   news.filter(newsItem => {
-                    return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
-                  })[0].description.substring(0, 45)
+                    return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                  })[2].description.substring(0, 45)
                 }}
               </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                    })[2].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                      })[2].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                  })[3].title
+                }}
+              </span>
               <span>
                 {{
                   news.filter(newsItem => {
-                    return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
-                  })[0].author ?
+                    return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                  })[3].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                    })[3].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                      })[3].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                  })[4].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                  })[4].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                    })[4].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes('интересн') || newsItem.description.toLowerCase().includes('нов')
+                      })[4].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-if="news.filter(newsItem => {
+          return newsItem.description.toLowerCase().includes('nord stream') || newsItem.description.toLowerCase().includes('северный поток') || newsItem.description.toLowerCase().includes('журналист')
+        }).length >= 5">
+          <div class="newsRubric">
+            <span class="newsRubricHeader">
+              Политика
+            </span>
+            <div class="newsRubricTag">
+              Театры
+            </div>
+            <div class="newsRubricTag">
+              Музыка
+            </div>
+            <div class="newsRubricTag">
+              Кино
+            </div>
+          </div>
+          <div class="newsRow">
+            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
+              <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsVerticalFormat">
+                <span class="newsItemHeader">
+                  {{
                     news.filter(newsItem => {
                       return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
-                    })[0].author
-                  :
-                    'Неизвестно'
+                    })[0].title
+                  }}
+                </span>
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
+                    })[0].description.substring(0, 45)
+                  }}
+                </span>
+              </div>
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
+                    })[0].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
+                      })[0].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
+                  })[1].title
                 }}
               </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[16].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[16].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
               <span>
                 {{
                   news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[16].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[16].author
-                  :
-                    'Неизвестно'
+                    return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
+                  })[1].description.substring(0, 45)
                 }}
               </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
+                    })[1].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
+                      })[1].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="newsRow">
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
+                  })[2].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
+                  })[2].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
+                    })[2].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
+                      })[2].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
+                  })[3].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
+                  })[3].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
+                    })[3].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
+                      })[3].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
+                  })[4].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
+                  })[4].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
+                    })[4].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("nord stream") || newsItem.description.toLowerCase().includes("северный поток") || newsItem.description.toLowerCase().includes("журналист")
+                      })[4].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
           </div>
         </div>
-        <div class="newsRow">
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[17].title
-              }}
+        <div v-if="news.filter(newsItem => {
+          return newsItem.category.includes('general')
+        }).length >= 5">
+          <div class="newsRubric">
+            <span class="newsRubricHeader">
+              Реклама
             </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[17].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[17].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[17].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
+            <div class="newsRubricTag">
+              Театры
+            </div>
+            <div class="newsRubricTag">
+              Музыка
+            </div>
+            <div class="newsRubricTag">
+              Кино
             </div>
           </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[18].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[18].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[18].author ?
+          <div class="newsRow">
+            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
+              <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsVerticalFormat">
+                <span class="newsItemHeader">
+                  {{
                     news.filter(newsItem => {
                       return newsItem.category.includes("general")
-                    })[18].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[19].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[19].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[19].author ?
+                    })[0].title
+                  }}
+                </span>
+                <span>
+                  {{
                     news.filter(newsItem => {
                       return newsItem.category.includes("general")
-                    })[19].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
+                    })[0].description.substring(0, 45)
+                  }}
+                </span>
+              </div>
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.category.includes("general")
+                    })[0].author ?
+                      news.filter(newsItem => {
+                        return newsItem.category.includes("general")
+                      })[0].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="newsRubric">
-          <span class="newsRubricHeader">
-            Реклама
-          </span>
-          <div class="newsRubricTag">
-            Театры
-          </div>
-          <div class="newsRubricTag">
-            Музыка
-          </div>
-          <div class="newsRubricTag">
-            Кино
-          </div>
-        </div>
-        <div class="newsRow">
-          <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
-            <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsVerticalFormat">
+            <div class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
                     return newsItem.category.includes("general")
-                  })[20].title
+                  })[1].title
                 }}
               </span>
               <span>
                 {{
                   news.filter(newsItem => {
                     return newsItem.category.includes("general")
-                  })[20].description.substring(0, 45)
+                  })[1].description.substring(0, 45)
                 }}
               </span>
-            </div>
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[20].author ?
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
                     news.filter(newsItem => {
                       return newsItem.category.includes("general")
-                    })[20].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
+                    })[1].author ?
+                      news.filter(newsItem => {
+                        return newsItem.category.includes("general")
+                      })[1].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
           </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[21].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[21].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[21].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[21].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="newsRow">
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[22].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[22].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[22].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[22].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[23].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[23].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[23].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[23].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[24].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[24].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[24].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[24].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="newsRubric">
-          <span class="newsRubricHeader">
-            Общество
-          </span>
-          <div class="newsRubricTag">
-            Театры
-          </div>
-          <div class="newsRubricTag">
-            Музыка
-          </div>
-          <div class="newsRubricTag">
-            Кино
-          </div>
-        </div>
-        <div class="newsRow">
-          <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
-            <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsVerticalFormat">
+          <div class="newsRow">
+            <div class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
-                    return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
-                  })[0].title
+                    return newsItem.category.includes("general")
+                  })[2].title
                 }}
               </span>
               <span>
                 {{
                   news.filter(newsItem => {
-                    return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
-                  })[0].description.substring(0, 45)
+                    return newsItem.category.includes("general")
+                  })[2].description.substring(0, 45)
                 }}
               </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.category.includes("general")
+                    })[2].author ?
+                      news.filter(newsItem => {
+                        return newsItem.category.includes("general")
+                      })[2].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.category.includes("general")
+                  })[3].title
+                }}
+              </span>
               <span>
                 {{
                   news.filter(newsItem => {
-                    return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
-                  })[0].author ?
+                    return newsItem.category.includes("general")
+                  })[3].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.category.includes("general")
+                    })[3].author ?
+                      news.filter(newsItem => {
+                        return newsItem.category.includes("general")
+                      })[3].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.category.includes("general")
+                  })[4].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.category.includes("general")
+                  })[4].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.category.includes("general")
+                    })[4].author ?
+                      news.filter(newsItem => {
+                        return newsItem.category.includes("general")
+                      })[4].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-if="news.filter(newsItem => {
+          return newsItem.description.toLowerCase().includes('социал') || newsItem.description.toLowerCase().includes('президент') || newsItem.description.toLowerCase().includes('пенси') || newsItem.description.toLowerCase().includes('обществ')
+        }).length >= 5">
+          <div class="newsRubric">
+            <span class="newsRubricHeader">
+              Общество
+            </span>
+            <div class="newsRubricTag">
+              Театры
+            </div>
+            <div class="newsRubricTag">
+              Музыка
+            </div>
+            <div class="newsRubricTag">
+              Кино
+            </div>
+          </div>
+          <div class="newsRow">
+            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
+              <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsVerticalFormat">
+                <span class="newsItemHeader">
+                  {{
                     news.filter(newsItem => {
                       return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
-                    })[0].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[26].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[26].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[26].author ?
+                    })[0].title
+                  }}
+                </span>
+                <span>
+                  {{
                     news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[26].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="newsRow">
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[27].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[27].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[27].author ?
+                      return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
+                    })[0].description.substring(0, 45)
+                  }}
+                </span>
+              </div>
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
                     news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[27].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
+                      return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
+                    })[0].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
+                      })[0].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[28].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[28].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[28].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[28].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[29].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[29].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[29].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[29].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="newsRubric">
-          <span class="newsRubricHeader">
-            Экономика
-          </span>
-          <div class="newsRubricTag">
-            Театры
-          </div>
-          <div class="newsRubricTag">
-            Музыка
-          </div>
-          <div class="newsRubricTag">
-            Кино
-          </div>
-        </div>
-        <div class="newsRow">
-          <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
-            <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsVerticalFormat">
+            <div class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[30].title
+                    return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
+                  })[1].title
                 }}
               </span>
               <span>
                 {{
                   news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[30].description.substring(0, 45)
+                    return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
+                  })[1].description.substring(0, 45)
                 }}
               </span>
-            </div>
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[30].author ?
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
                     news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[30].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
+                      return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
+                    })[1].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
+                      })[1].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
           </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[31].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[31].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[31].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[31].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="newsRow">
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[32].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[32].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[32].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[32].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[33].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[33].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[33].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[33].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[34].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[34].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[34].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[34].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="newsRubric">
-          <span class="newsRubricHeader">
-            В мире
-          </span>
-          <div class="newsRubricTag">
-            Театры
-          </div>
-          <div class="newsRubricTag">
-            Музыка
-          </div>
-          <div class="newsRubricTag">
-            Кино
-          </div>
-        </div>
-        <div class="newsRow">
-          <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
-            <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsVerticalFormat">
+          <div class="newsRow">
+            <div class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
-                    return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
-                  })[0].title
+                    return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
+                  })[2].title
                 }}
               </span>
               <span>
                 {{
                   news.filter(newsItem => {
-                    return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
-                  })[0].description.substring(0, 45)
+                    return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
+                  })[2].description.substring(0, 45)
                 }}
               </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
+                    })[2].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
+                      })[2].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
+                  })[3].title
+                }}
+              </span>
               <span>
                 {{
                   news.filter(newsItem => {
-                    return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
-                  })[0].author ?
+                    return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
+                  })[3].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
+                    })[3].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
+                      })[3].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
+                  })[4].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
+                  })[4].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
+                    })[4].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("социал") || newsItem.description.toLowerCase().includes("президент") || newsItem.description.toLowerCase().includes("пенси") || newsItem.description.toLowerCase().includes("обществ")
+                      })[4].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-if="news.filter(newsItem => {
+          return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+        }).length >= 5">
+          <div class="newsRubric">
+            <span class="newsRubricHeader">
+              Экономика
+            </span>
+            <div class="newsRubricTag">
+              Театры
+            </div>
+            <div class="newsRubricTag">
+              Музыка
+            </div>
+            <div class="newsRubricTag">
+              Кино
+            </div>
+          </div>
+          <div class="newsRow">
+            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
+              <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsVerticalFormat">
+                <span class="newsItemHeader">
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                    })[0].title
+                  }}
+                </span>
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                    })[0].description.substring(0, 45)
+                  }}
+                </span>
+              </div>
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                    })[0].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                      })[0].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                  })[1].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                  })[1].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                    })[1].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                      })[1].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="newsRow">
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                  })[2].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                  })[2].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                    })[2].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                      })[2].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                  })[3].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                  })[3].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                    })[3].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                      })[3].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                  })[4].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                  })[4].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                    })[4].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes('банк') || newsItem.description.toLowerCase().includes('эконом') || newsItem.description.toLowerCase().includes('денеж') || newsItem.description.toLowerCase().includes('монет')
+                      })[4].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-if="news.filter(newsItem => {
+          return newsItem.description.toLowerCase().includes('норвеж') || newsItem.description.toLowerCase().includes('варшав') || newsItem.description.toLowerCase().includes('мир') || newsItem.description.toLowerCase().includes('стран')
+        }).length >= 5">
+          <div class="newsRubric">
+            <span class="newsRubricHeader">
+              В мире
+            </span>
+            <div class="newsRubricTag">
+              Театры
+            </div>
+            <div class="newsRubricTag">
+              Музыка
+            </div>
+            <div class="newsRubricTag">
+              Кино
+            </div>
+          </div>
+          <div class="newsRow">
+            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
+              <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsVerticalFormat">
+                <span class="newsItemHeader">
+                  {{
                     news.filter(newsItem => {
                       return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
-                    })[0].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[36].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[36].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[36].author ?
+                    })[0].title
+                  }}
+                </span>
+                <span>
+                  {{
                     news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[36].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="newsRow">
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[37].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[37].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[37].author ?
+                      return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
+                    })[0].description.substring(0, 45)
+                  }}
+                </span>
+              </div>
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
                     news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[37].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
+                      return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
+                    })[0].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
+                      })[0].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[38].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[38].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[38].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[38].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[39].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[39].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[39].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[39].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="newsRubric">
-          <span class="newsRubricHeader">
-            Спорт
-          </span>
-          <div class="newsRubricTag">
-            Театры
-          </div>
-          <div class="newsRubricTag">
-            Музыка
-          </div>
-          <div class="newsRubricTag">
-            Кино
-          </div>
-        </div>
-        <div class="newsRow">
-          <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
-            <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsVerticalFormat">
+            <div class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
-                    return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
-                  })[0].title
+                    return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
+                  })[1].title
                 }}
               </span>
               <span>
                 {{
                   news.filter(newsItem => {
-                    return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
-                  })[0].description.substring(0, 45)
+                    return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
+                  })[1].description.substring(0, 45)
                 }}
               </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
+                    })[1].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
+                      })[1].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+          </div>
+          <div class="newsRow">
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
+                  })[2].title
+                }}
+              </span>
               <span>
                 {{
                   news.filter(newsItem => {
-                    return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
-                  })[0].author ?
+                    return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
+                  })[2].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
+                    })[2].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
+                      })[2].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
+                  })[3].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
+                  })[3].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
+                    })[3].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
+                      })[3].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
+                  })[4].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
+                  })[4].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
+                    })[4].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("норвеж") || newsItem.description.toLowerCase().includes("варшав") || newsItem.description.toLowerCase().includes("мир") || newsItem.description.toLowerCase().includes("стран")
+                      })[4].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-if="news.filter(newsItem => {
+          return newsItem.description.toLowerCase().includes('олимпий') || newsItem.description.toLowerCase().includes('футбол') || newsItem.description.toLowerCase().includes('волейбол') || newsItem.description.toLowerCase().includes('баскетболл')
+        }).length >= 5">
+          <div class="newsRubric">
+            <span class="newsRubricHeader">
+              Спорт
+            </span>
+            <div class="newsRubricTag">
+              Театры
+            </div>
+            <div class="newsRubricTag">
+              Музыка
+            </div>
+            <div class="newsRubricTag">
+              Кино
+            </div>
+          </div>
+          <div class="newsRow">
+            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
+              <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsVerticalFormat">
+                <span class="newsItemHeader">
+                  {{
                     news.filter(newsItem => {
                       return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
-                    })[0].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[41].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[41].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[41].author ?
+                    })[0].title
+                  }}
+                </span>
+                <span>
+                  {{
                     news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[41].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="newsRow">
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[42].description.substring(0, 45)
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[42].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[42].author ?
+                      return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
+                    })[0].description.substring(0, 45)
+                  }}
+                </span>
+              </div>
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
                     news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[42].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
+                      return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
+                    })[0].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
+                      })[0].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[43].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[43].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[43].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[43].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[44].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[44].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[44].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[44].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="newsRubric">
-          <span class="newsRubricHeader">
-            Проишествия
-          </span>
-          <div class="newsRubricTag">
-            Театры
-          </div>
-          <div class="newsRubricTag">
-            Музыка
-          </div>
-          <div class="newsRubricTag">
-            Кино
-          </div>
-        </div>
-        <div class="newsRow">
-          <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
-            <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsVerticalFormat">
+            <div class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
-                    return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
-                  })[0].title
+                    return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
+                  })[1].title
                 }}
               </span>
               <span>
                 {{
                   news.filter(newsItem => {
-                    return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
-                  })[0].description.substring(0, 45)
+                    return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
+                  })[1].description.substring(0, 45)
                 }}
               </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
+                    })[1].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
+                      })[1].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+          </div>
+          <div class="newsRow">
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
+                  })[2].description.substring(0, 45)
+                }}
+              </span>
               <span>
                 {{
                   news.filter(newsItem => {
-                    return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
-                  })[0].author ?
+                    return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
+                  })[2].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
+                    })[2].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
+                      })[2].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
+                  })[3].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
+                  })[3].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
+                    })[3].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
+                      })[3].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
+                  })[4].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
+                  })[4].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
+                    })[4].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("олимпий") || newsItem.description.toLowerCase().includes("футбол") || newsItem.description.toLowerCase().includes("волейбол") || newsItem.description.toLowerCase().includes("баскетболл")
+                      })[4].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-if="news.filter(newsItem => {
+          return newsItem.description.toLowerCase().includes('проишествие') || newsItem.description.toLowerCase().includes('землятресение') || newsItem.description.toLowerCase().includes('умер')
+        }).length >= 5">
+          <div class="newsRubric">
+            <span class="newsRubricHeader">
+              Проишествия
+            </span>
+            <div class="newsRubricTag">
+              Театры
+            </div>
+            <div class="newsRubricTag">
+              Музыка
+            </div>
+            <div class="newsRubricTag">
+              Кино
+            </div>
+          </div>
+          <div class="newsRow">
+            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
+              <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsVerticalFormat">
+                <span class="newsItemHeader">
+                  {{
                     news.filter(newsItem => {
                       return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
-                    })[0].author
-                  :
-                    'Неизвестно'
+                    })[0].title
+                  }}
+                </span>
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
+                    })[0].description.substring(0, 45)
+                  }}
+                </span>
+              </div>
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
+                    })[0].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
+                      })[0].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
+                  })[1].title
                 }}
               </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[46].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[46].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
               <span>
                 {{
                   news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[46].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[46].author
-                  :
-                    'Неизвестно'
+                    return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
+                  })[1].description.substring(0, 45)
                 }}
               </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
+                    })[1].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
+                      })[1].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="newsRow">
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
+                  })[2].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
+                  })[2].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
+                    })[2].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
+                      })[2].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
+                  })[3].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
+                  })[3].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
+                    })[3].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
+                      })[3].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
+                  })[4].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
+                  })[4].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
+                    })[4].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("проишествие") || newsItem.description.toLowerCase().includes("землятресение") || newsItem.description.toLowerCase().includes("умер")
+                      })[4].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
           </div>
         </div>
-        <div class="newsRow">
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[47].title
-              }}
+        <div v-if="news.filter(newsItem => {
+          return newsItem.description.toLowerCase().includes('сериал') || newsItem.description.toLowerCase().includes('кино') || newsItem.description.toLowerCase().includes('звезда') || newsItem.description.toLowerCase().includes('франшиза') || newsItem.description.toLowerCase().includes('премьера') || newsItem.description.toLowerCase().includes('акт')
+        }).length >= 5">
+          <div class="newsRubric">
+            <span class="newsRubricHeader">
+              Культура
             </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[47].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[47].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[47].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
+            <div class="newsRubricTag">
+              Театры
+            </div>
+            <div class="newsRubricTag">
+              Музыка
+            </div>
+            <div class="newsRubricTag">
+              Кино
             </div>
           </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[48].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[48].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[48].author ?
+          <div class="newsRow">
+            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
+              <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsVerticalFormat">
+                <span class="newsItemHeader">
+                  {{
                     news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[48].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[49].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[49].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[49].author ?
+                      return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
+                    })[0].title
+                  }}
+                </span>
+                <span>
+                  {{
                     news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[49].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
+                      return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
+                    })[0].description.substring(0, 45)
+                  }}
+                </span>
+              </div>
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
+                    })[0].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
+                      })[0].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="newsRubric">
-          <span class="newsRubricHeader">
-            Культура
-          </span>
-          <div class="newsRubricTag">
-            Театры
-          </div>
-          <div class="newsRubricTag">
-            Музыка
-          </div>
-          <div class="newsRubricTag">
-            Кино
-          </div>
-        </div>
-        <div class="newsRow">
-          <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
-            <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsVerticalFormat">
+            <div class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
                     return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                  })[0].title
+                  })[1].title
                 }}
               </span>
               <span>
                 {{
                   news.filter(newsItem => {
                     return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                  })[0].description.substring(0, 45)
+                  })[1].description.substring(0, 45)
                 }}
               </span>
-            </div>
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                  })[0].author ?
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
                     news.filter(newsItem => {
                       return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                    })[0].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                })[1].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                })[1].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                  })[1].author ?
-                    news.filter(newsItem => {
-                      return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                    })[1].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
+                    })[1].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
+                      })[1].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="newsRow">
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                })[2].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                })[2].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+          <div class="newsRow">
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
+                  })[2].title
+                }}
+              </span>
               <span>
                 {{
                   news.filter(newsItem => {
                     return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                  })[2].author ?
-                    news.filter(newsItem => {
-                      return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                    })[2].author
-                  :
-                    'Неизвестно'
+                  })[2].description.substring(0, 45)
                 }}
               </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
+                    })[2].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
+                      })[2].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                })[3].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                })[3].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
+                  })[3].title
+                }}
+              </span>
               <span>
                 {{
                   news.filter(newsItem => {
                     return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                  })[3].author ?
-                    news.filter(newsItem => {
-                      return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                    })[3].author
-                  :
-                    'Неизвестно'
+                  })[3].description.substring(0, 45)
                 }}
               </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
+                    })[3].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
+                      })[3].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                })[4].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                })[4].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
+                  })[4].title
+                }}
+              </span>
               <span>
                 {{
                   news.filter(newsItem => {
                     return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                  })[4].author ?
-                    news.filter(newsItem => {
-                      return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
-                    })[4].author
-                  :
-                    'Неизвестно'
+                  })[4].description.substring(0, 45)
                 }}
               </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
+                    })[4].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("сериал") || newsItem.description.toLowerCase().includes("кино") || newsItem.description.toLowerCase().includes("звезда") || newsItem.description.toLowerCase().includes("франшиза") || newsItem.description.toLowerCase().includes("премьера") || newsItem.description.toLowerCase().includes("акт")
+                      })[4].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -2157,366 +2193,375 @@
             </div>
           </div>
         </div>
-        <div class="newsRubric">
-          <span class="newsRubricHeader">
-            Наука
-          </span>
-          <div class="newsRubricTag">
-            Театры
+        <div v-if="news.filter(newsItem => {
+          return newsItem.category.includes('general')
+        }).length >= 5">
+          <div class="newsRubric">
+            <span class="newsRubricHeader">
+              Наука
+            </span>
+            <div class="newsRubricTag">
+              Театры
+            </div>
+            <div class="newsRubricTag">
+              Музыка
+            </div>
+            <div class="newsRubricTag">
+              Кино
+            </div>
           </div>
-          <div class="newsRubricTag">
-            Музыка
+          <div class="newsRow">
+            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
+              <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsVerticalFormat">
+                <span class="newsItemHeader">
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("учен")
+                    })[0].title
+                  }}
+                </span>
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("учен")
+                    })[0].description.substring(0, 45)
+                  }}
+                </span>
+              </div>
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("учен")
+                    })[0].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("учен")
+                      })[0].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("учен")
+                  })[1].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("учен")
+                  })[1].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("учен")
+                    })[1].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("учен")
+                      })[1].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
           </div>
-          <div class="newsRubricTag">
-            Кино
-          </div>
-        </div>
-        <div class="newsRow">
-          <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
-            <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsVerticalFormat">
+          <div class="newsRow">
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("учен")
+                  })[2].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("учен")
+                  })[2].title
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("учен")
+                    })[2].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("учен")
+                      })[2].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("учен")
+                  })[3].title
+                }}
+              </span>
+              <span>
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("учен")
+                  })[3].description.substring(0, 45)
+                }}
+              </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("учен")
+                    })[3].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("учен")
+                      })[3].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
+            </div>
+            <div class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
                     return newsItem.category.includes("general")
-                  })[60].title
+                  })[4].title
                 }}
               </span>
               <span>
                 {{
                   news.filter(newsItem => {
                     return newsItem.category.includes("general")
-                  })[60].description.substring(0, 45)
+                  })[4].description.substring(0, 45)
                 }}
               </span>
-            </div>
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[60].author ?
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
                     news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[60].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[60].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[60].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[60].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[60].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
+                      return newsItem.description.toLowerCase().includes("учен")
+                    })[4].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("учен")
+                      })[4].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
           </div>
         </div>
-        <div class="newsRow">
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[61].title
-              }}
+        <div v-if="news.filter(newsItem => {
+          return newsItem.description.toLowerCase().includes('Skoda') || newsItem.description.toLowerCase().includes('Toyota') || newsItem.description.toLowerCase().includes('АвтоВАЗ') || newsItem.description.toLowerCase().includes('mercedes') || newsItem.description.toLowerCase().includes('dacia') || newsItem.description.toLowerCase().includes('lada') || newsItem.description.toLowerCase().includes('Tesla') || newsItem.description.toLowerCase().includes('пикап') || newsItem.description.toLowerCase().includes('Hyundai') || newsItem.description.toLowerCase().includes('Kia') || newsItem.description.toLowerCase().includes('Haval')
+        }).length >= 5">
+          <div class="newsRubric">
+            <span class="newsRubricHeader">
+              Авто
             </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[61].title
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[61].author ?
-                    news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[61].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
+            <div class="newsRubricTag">
+              Театры
+            </div>
+            <div class="newsRubricTag">
+              Музыка
+            </div>
+            <div class="newsRubricTag">
+              Кино
             </div>
           </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[62].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[62].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[62].author ?
+          <div class="newsRow">
+            <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
+              <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsVerticalFormat">
+                <span class="newsItemHeader">
+                  {{
                     news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[62].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[63].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.category.includes("general")
-                })[63].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.category.includes("general")
-                  })[63].author ?
+                      return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
+                    })[0].title
+                  }}
+                </span>
+                <span>
+                  {{
                     news.filter(newsItem => {
-                      return newsItem.category.includes("general")
-                    })[63].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
+                      return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
+                    })[0].description.substring(0, 45)
+                  }}
+                </span>
+              </div>
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
+                    })[0].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
+                      })[0].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="newsRubric">
-          <span class="newsRubricHeader">
-            Авто
-          </span>
-          <div class="newsRubricTag">
-            Театры
-          </div>
-          <div class="newsRubricTag">
-            Музыка
-          </div>
-          <div class="newsRubricTag">
-            Кино
-          </div>
-        </div>
-        <div class="newsRow">
-          <div @click="$router.push({ name: 'NewsItem', query: {  } })" class="newsItem newsItemMain">
-            <img class="newsItemMainImg" height="75%" width="50%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsVerticalFormat">
+            <div class="newsItem">
               <span class="newsItemHeader">
                 {{
                   news.filter(newsItem => {
                     return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                  })[0].title
+                  })[1].title
                 }}
               </span>
               <span>
                 {{
                   news.filter(newsItem => {
                     return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                  })[0].description.substring(0, 45)
+                  })[1].description.substring(0, 45)
                 }}
               </span>
-            </div>
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                  })[0].author ?
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
                     news.filter(newsItem => {
                       return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                    })[0].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
-            </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                })[1].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                })[1].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
-              <span>
-                {{
-                  news.filter(newsItem => {
-                    return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                  })[1].author ?
-                    news.filter(newsItem => {
-                      return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                    })[1].author
-                  :
-                    'Неизвестно'
-                }}
-              </span>
+                    })[1].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
+                      })[1].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="newsRow">
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                })[2].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                })[2].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+          <div class="newsRow">
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
+                  })[2].title
+                }}
+              </span>
               <span>
                 {{
                   news.filter(newsItem => {
                     return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                  })[2].author ?
-                    news.filter(newsItem => {
-                      return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                    })[2].author
-                  :
-                    'Неизвестно'
+                  })[2].description.substring(0, 45)
                 }}
               </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
+                    })[2].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
+                      })[2].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                })[3].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                })[3].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
+                  })[3].title
+                }}
+              </span>
               <span>
                 {{
                   news.filter(newsItem => {
                     return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                  })[3].author ?
-                    news.filter(newsItem => {
-                      return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                    })[3].author
-                  :
-                    'Неизвестно'
+                  })[3].description.substring(0, 45)
                 }}
               </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
+                    })[3].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
+                      })[3].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="newsItem">
-            <span class="newsItemHeader">
-              {{
-                news.filter(newsItem => {
-                  return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                })[4].title
-              }}
-            </span>
-            <span>
-              {{
-                news.filter(newsItem => {
-                  return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                })[4].description.substring(0, 45)
-              }}
-            </span>
-            <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-            <div class="newsItemFooter">
-              <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+            <div class="newsItem">
+              <span class="newsItemHeader">
+                {{
+                  news.filter(newsItem => {
+                    return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
+                  })[4].title
+                }}
+              </span>
               <span>
                 {{
                   news.filter(newsItem => {
                     return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                  })[4].author ?
-                    news.filter(newsItem => {
-                      return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
-                    })[68].author
-                  :
-                    'Неизвестно'
+                  })[4].description.substring(0, 45)
                 }}
               </span>
+              <img width="100%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
+              <div class="newsItemFooter">
+                <img width="15px" src="https://avatars.mds.yandex.net/get-ynews-logo/50744/254154182-1550152741834-square/logo-square" alt="">
+                <span>
+                  {{
+                    news.filter(newsItem => {
+                      return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
+                    })[4].author ?
+                      news.filter(newsItem => {
+                        return newsItem.description.toLowerCase().includes("Skoda") || newsItem.description.toLowerCase().includes("Toyota") || newsItem.description.toLowerCase().includes("АвтоВАЗ") || newsItem.description.toLowerCase().includes("mercedes") || newsItem.description.toLowerCase().includes("dacia") || newsItem.description.toLowerCase().includes("lada") || newsItem.description.toLowerCase().includes("Tesla") || newsItem.description.toLowerCase().includes("пикап") || newsItem.description.toLowerCase().includes("Hyundai") || newsItem.description.toLowerCase().includes("Kia") || newsItem.description.toLowerCase().includes("Haval")
+                      })[4].author
+                    :
+                      'Неизвестно'
+                  }}
+                </span>
+              </div>
             </div>
           </div>
         </div>
+        
       </div>
       <div class="ads">
         <div class="adsItem">
