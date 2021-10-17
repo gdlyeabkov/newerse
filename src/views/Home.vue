@@ -2993,7 +2993,8 @@ export default {
 
       setTimeout(() => {
         this.news.map((newsItem) => {
-          fetch(`http://localhost:4000/data?title=${newsItem.title.split(' ')[0]}`, {
+          // fetch(`http://localhost:4000/data?title=${newsItem.title.split(' ')[0]}`, {
+          fetch(`https://newerse.herokuapp.com/data?title=${newsItem.title.split(' ')[0]}`, {
             mode: 'cors',
             method: 'GET'
           }).then(response => response.body).then(rb  => {
@@ -3119,7 +3120,8 @@ export default {
       //   console.log("ошибка зароса на картинку")
       // })
 
-      fetch(`http://localhost:4000/data?title=${title}`, {
+      fetch(`https://newerse.herokuapp.com/data?title=${title}`, {
+      // fetch(`http://localhost:4000/data?title=${title}`, {
         mode: 'cors',
         method: 'GET'
       }).then(response => response.body).then(rb  => {

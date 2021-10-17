@@ -303,7 +303,8 @@ export default {
             })
     
             setTimeout(() => {
-                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${0    }`, {
+                fetch(`https://newerse.herokuapp.com/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${0    }`, {
+                // fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${0    }`, {
                     mode: 'cors',
                     method: 'GET'
                 }).then(response => response.body).then(rb  => {
@@ -332,7 +333,8 @@ export default {
                     console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
                     this.posterOne = JSON.parse(result).source
                 })
-                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${1}`, {
+                fetch(`https://newerse.herokuapp.com/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${1}`, {
+                // fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${1}`, {
                     mode: 'cors',
                     method: 'GET'
                 }).then(response => response.body).then(rb  => {
@@ -361,7 +363,8 @@ export default {
                     console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
                     this.posterTwo = JSON.parse(result).source
                 })
-                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${2}`, {
+                fetch(`https://newerse.herokuapp.com/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${2}`, {
+                // fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${2}`, {
                     mode: 'cors',
                     method: 'GET'
                 }).then(response => response.body).then(rb  => {
@@ -390,7 +393,8 @@ export default {
                     console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
                     this.posterThree = JSON.parse(result).source
                 })
-                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${3}`, {
+                fetch(`https://newerse.herokuapp.com/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${3}`, {
+                // fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${3}`, {
                     mode: 'cors',
                     method: 'GET'
                 }).then(response => response.body).then(rb  => {
@@ -419,7 +423,8 @@ export default {
                     console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
                     this.posterFour = JSON.parse(result).source
                 })
-                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${4}`, {
+                fetch(`https://newerse.herokuapp.com/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${4}`, {
+                // fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${4}`, {
                     mode: 'cors',
                     method: 'GET'
                 }).then(response => response.body).then(rb  => {
@@ -448,7 +453,8 @@ export default {
                     console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
                     this.posterFive = JSON.parse(result).source
                 })
-                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${5}`, {
+                fetch(`https://newerse.herokuapp.com/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${5}`, {
+                // fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${5}`, {
                     mode: 'cors',
                     method: 'GET'
                 }).then(response => response.body).then(rb  => {
@@ -477,7 +483,8 @@ export default {
                     console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
                     this.posterSix = JSON.parse(result).source
                 })
-                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${6}`, {
+                fetch(`https://newerse.herokuapp.com/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${6}`, {
+                // fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${6}`, {
                     mode: 'cors',
                     method: 'GET'
                 }).then(response => response.body).then(rb  => {
@@ -506,7 +513,8 @@ export default {
                     console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
                     this.posterSeven = JSON.parse(result).source
                 })
-                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${7}`, {
+                fetch(`https://newerse.herokuapp.com/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${7}`, {
+                // fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${7}`, {
                     mode: 'cors',
                     method: 'GET'
                 }).then(response => response.body).then(rb  => {
@@ -535,7 +543,8 @@ export default {
                     console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
                     this.posterEight = JSON.parse(result).source
                 })
-                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${8}`, {
+                fetch(`https://newerse.herokuapp.com/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${8}`, {
+                // fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${8}`, {
                     mode: 'cors',
                     method: 'GET'
                 }).then(response => response.body).then(rb  => {
@@ -564,7 +573,8 @@ export default {
                     console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
                     this.posterNine = JSON.parse(result).source
                 })
-                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${9}`, {
+                fetch(`https://newerse.herokuapp.com/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${9}`, {
+                // fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${9}`, {
                     mode: 'cors',
                     method: 'GET'
                 }).then(response => response.body).then(rb  => {
@@ -593,7 +603,8 @@ export default {
                     console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
                     this.posterTen = JSON.parse(result).source
                 })
-                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${10}`, {
+                fetch(`https://newerse.herokuapp.com/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${10}`, {
+                // fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${10}`, {
                     mode: 'cors',
                     method: 'GET'
                 }).then(response => response.body).then(rb  => {
@@ -622,7 +633,9 @@ export default {
                     console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
                     this.posterEleven = JSON.parse(result).source
                 })
-                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${11}`, {
+                
+                fetch(`https://newerse.herokuapp.com/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${11}`, {
+                // fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${11}`, {
                     mode: 'cors',
                     method: 'GET'
                 }).then(response => response.body).then(rb  => {
@@ -651,7 +664,9 @@ export default {
                     console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
                     this.posterTwelph = JSON.parse(result).source
                 })
-                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${12}`, {
+                
+                fetch(`https://newerse.herokuapp.com/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${12}`, {
+                // fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${12}`, {
                     mode: 'cors',
                     method: 'GET'
                 }).then(response => response.body).then(rb  => {
@@ -680,7 +695,9 @@ export default {
                     console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
                     this.posterFirthin = JSON.parse(result).source
                 })
-                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${13}`, {
+                
+                fetch(`https://newerse.herokuapp.com/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${13}`, {
+                // fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${13}`, {
                     mode: 'cors',
                     method: 'GET'
                 }).then(response => response.body).then(rb  => {
