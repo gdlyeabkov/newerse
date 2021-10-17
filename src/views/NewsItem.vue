@@ -30,20 +30,20 @@
                             chevron_left
                         </span>
                         <div ref="carouselContent" class="carouselContent">
-                            <img width="35%" src="https://avatars.mds.yandex.net/get-ynews/2456605/165fe7243ff380342d56d670e6e59fd6/800x400" alt="">
-                            <img width="35%" src="https://avatars.mds.yandex.net/get-ynews/114574/03cf1e2a56e5bf11e0c6f0193340b9c6/800x400" alt="">
-                            <img width="35%" src="https://avatars.mds.yandex.net/get-ynews/2356057/2aa23066b5fb4cef77d1d9b40fcd0ef6/800x400" alt="">
-                            <img width="35%" src="https://avatars.mds.yandex.net/get-ynews/2748487/aac5841b21c55a0fc0cb6b799fe49f9c/800x400" alt="">
-                            <img width="35%" src="https://avatars.mds.yandex.net/get-ynews/3125085/4e81be4daacb6b8c0e1a64657a4f2bda/800x400" alt="">
-                            <img width="35%" src="https://avatars.mds.yandex.net/get-ynews/2456605/7cc9285f6a521aa8c9632622151f13f0/800x400" alt="">
-                            <img width="35%" src="https://avatars.mds.yandex.net/get-ynews/3332920/736008ffbbf76aa5e12c3192c90590d5/800x400" alt="">
-                            <img width="35%" src="https://avatars.mds.yandex.net/get-ynews/3339532/26c46977685aa06dd68e56b4b57cfc19/800x400" alt="">
-                            <img width="35%" src="https://avatars.mds.yandex.net/get-ynews/3129355/c55d5d829bc8e6ec07ca32b241cb7514/800x400" alt="">
-                            <img width="35%" src="https://avatars.mds.yandex.net/get-ynews/2755188/dd43144558138db9308f258870c40cda/800x400" alt="">
-                            <img width="35%" src="https://avatars.mds.yandex.net/get-ynews/2433085/d1f675c669c579695f75f2b0751e02c1/800x400" alt="">
-                            <img width="35%" src="https://avatars.mds.yandex.net/get-ynews/3116109/27f020975269c33752dd9fa3d01e6e8c/800x400" alt="">
-                            <img width="35%" src="https://avatars.mds.yandex.net/get-ynews/2364828/2e557eca443f2972d27555fe56b36e0b/800x400" alt="">
-                            <img width="35%" src="https://avatars.mds.yandex.net/get-ynews/2811039/f6124a1fdda7bfb30c23dee9be43f396/800x400" alt="">
+                            <img width="35%" :src="posterOne" alt="">
+                            <img width="35%" :src="posterTwo" alt="">
+                            <img width="35%" :src="posterThree" alt="">
+                            <img width="35%" :src="posterFour" alt="">
+                            <img width="35%" :src="posterFive" alt="">
+                            <img width="35%" :src="posterSix" alt="">
+                            <img width="35%" :src="posterSeven" alt="">
+                            <img width="35%" :src="posterEight" alt="">
+                            <img width="35%" :src="posterNine" alt="">
+                            <img width="35%" :src="posterTen" alt="">
+                            <img width="35%" :src="posterEleven" alt="">
+                            <img width="35%" :src="posterTwelph" alt="">
+                            <img width="35%" :src="posterFirthin" alt="">
+                            <img width="35%" :src="posterFourtin" alt="">
                         </div>
                         <span @click="scrollPictures(true)" class="material-icons">
                             chevron_right
@@ -248,6 +248,20 @@ export default {
         return {
             news: [],
             newsItem: {},
+            posterOne: '',
+            posterTwo: '',
+            posterThree: '',
+            posterFour: '',
+            posterFive: '',
+            posterSix: '',
+            posterSeven: '',
+            posterEight: '',
+            posterNine: '',
+            posterTen: '',
+            posterEleven: '',
+            posterTwelph: '',
+            posterFirthin: '',
+            posterFourtin: ''
         }
     },
     mounted(){
@@ -287,7 +301,416 @@ export default {
                 top: 0,
                 behavior: "smooth"
             })
-        })
+    
+            setTimeout(() => {
+                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${0    }`, {
+                    mode: 'cors',
+                    method: 'GET'
+                }).then(response => response.body).then(rb  => {
+                    const reader = rb.getReader()
+                    return new ReadableStream({
+                    start(controller) {
+                        function push() {
+                        reader.read().then( ({done, value}) => {
+                            if (done) {
+                            console.log('done', done);
+                            controller.close();
+                            return;
+                            }
+                            controller.enqueue(value);
+                            console.log(done, value);
+                            push();
+                        })
+                        }
+                        push();
+                    }
+                    });
+                }).then(stream => {
+                    return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+                })
+                .then(result => {
+                    console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
+                    this.posterOne = JSON.parse(result).source
+                })
+                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${1}`, {
+                    mode: 'cors',
+                    method: 'GET'
+                }).then(response => response.body).then(rb  => {
+                    const reader = rb.getReader()
+                    return new ReadableStream({
+                    start(controller) {
+                        function push() {
+                        reader.read().then( ({done, value}) => {
+                            if (done) {
+                            console.log('done', done);
+                            controller.close();
+                            return;
+                            }
+                            controller.enqueue(value);
+                            console.log(done, value);
+                            push();
+                        })
+                        }
+                        push();
+                    }
+                    });
+                }).then(stream => {
+                    return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+                })
+                .then(result => {
+                    console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
+                    this.posterTwo = JSON.parse(result).source
+                })
+                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${2}`, {
+                    mode: 'cors',
+                    method: 'GET'
+                }).then(response => response.body).then(rb  => {
+                    const reader = rb.getReader()
+                    return new ReadableStream({
+                    start(controller) {
+                        function push() {
+                        reader.read().then( ({done, value}) => {
+                            if (done) {
+                            console.log('done', done);
+                            controller.close();
+                            return;
+                            }
+                            controller.enqueue(value);
+                            console.log(done, value);
+                            push();
+                        })
+                        }
+                        push();
+                    }
+                    });
+                }).then(stream => {
+                    return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+                })
+                .then(result => {
+                    console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
+                    this.posterThree = JSON.parse(result).source
+                })
+                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${3}`, {
+                    mode: 'cors',
+                    method: 'GET'
+                }).then(response => response.body).then(rb  => {
+                    const reader = rb.getReader()
+                    return new ReadableStream({
+                    start(controller) {
+                        function push() {
+                        reader.read().then( ({done, value}) => {
+                            if (done) {
+                            console.log('done', done);
+                            controller.close();
+                            return;
+                            }
+                            controller.enqueue(value);
+                            console.log(done, value);
+                            push();
+                        })
+                        }
+                        push();
+                    }
+                    });
+                }).then(stream => {
+                    return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+                })
+                .then(result => {
+                    console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
+                    this.posterFour = JSON.parse(result).source
+                })
+                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${4}`, {
+                    mode: 'cors',
+                    method: 'GET'
+                }).then(response => response.body).then(rb  => {
+                    const reader = rb.getReader()
+                    return new ReadableStream({
+                    start(controller) {
+                        function push() {
+                        reader.read().then( ({done, value}) => {
+                            if (done) {
+                            console.log('done', done);
+                            controller.close();
+                            return;
+                            }
+                            controller.enqueue(value);
+                            console.log(done, value);
+                            push();
+                        })
+                        }
+                        push();
+                    }
+                    });
+                }).then(stream => {
+                    return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+                })
+                .then(result => {
+                    console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
+                    this.posterFive = JSON.parse(result).source
+                })
+                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${5}`, {
+                    mode: 'cors',
+                    method: 'GET'
+                }).then(response => response.body).then(rb  => {
+                    const reader = rb.getReader()
+                    return new ReadableStream({
+                    start(controller) {
+                        function push() {
+                        reader.read().then( ({done, value}) => {
+                            if (done) {
+                            console.log('done', done);
+                            controller.close();
+                            return;
+                            }
+                            controller.enqueue(value);
+                            console.log(done, value);
+                            push();
+                        })
+                        }
+                        push();
+                    }
+                    });
+                }).then(stream => {
+                    return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+                })
+                .then(result => {
+                    console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
+                    this.posterSix = JSON.parse(result).source
+                })
+                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${6}`, {
+                    mode: 'cors',
+                    method: 'GET'
+                }).then(response => response.body).then(rb  => {
+                    const reader = rb.getReader()
+                    return new ReadableStream({
+                    start(controller) {
+                        function push() {
+                        reader.read().then( ({done, value}) => {
+                            if (done) {
+                            console.log('done', done);
+                            controller.close();
+                            return;
+                            }
+                            controller.enqueue(value);
+                            console.log(done, value);
+                            push();
+                        })
+                        }
+                        push();
+                    }
+                    });
+                }).then(stream => {
+                    return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+                })
+                .then(result => {
+                    console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
+                    this.posterSeven = JSON.parse(result).source
+                })
+                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${7}`, {
+                    mode: 'cors',
+                    method: 'GET'
+                }).then(response => response.body).then(rb  => {
+                    const reader = rb.getReader()
+                    return new ReadableStream({
+                    start(controller) {
+                        function push() {
+                        reader.read().then( ({done, value}) => {
+                            if (done) {
+                            console.log('done', done);
+                            controller.close();
+                            return;
+                            }
+                            controller.enqueue(value);
+                            console.log(done, value);
+                            push();
+                        })
+                        }
+                        push();
+                    }
+                    });
+                }).then(stream => {
+                    return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+                })
+                .then(result => {
+                    console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
+                    this.posterEight = JSON.parse(result).source
+                })
+                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${8}`, {
+                    mode: 'cors',
+                    method: 'GET'
+                }).then(response => response.body).then(rb  => {
+                    const reader = rb.getReader()
+                    return new ReadableStream({
+                    start(controller) {
+                        function push() {
+                        reader.read().then( ({done, value}) => {
+                            if (done) {
+                            console.log('done', done);
+                            controller.close();
+                            return;
+                            }
+                            controller.enqueue(value);
+                            console.log(done, value);
+                            push();
+                        })
+                        }
+                        push();
+                    }
+                    });
+                }).then(stream => {
+                    return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+                })
+                .then(result => {
+                    console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
+                    this.posterNine = JSON.parse(result).source
+                })
+                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${9}`, {
+                    mode: 'cors',
+                    method: 'GET'
+                }).then(response => response.body).then(rb  => {
+                    const reader = rb.getReader()
+                    return new ReadableStream({
+                    start(controller) {
+                        function push() {
+                        reader.read().then( ({done, value}) => {
+                            if (done) {
+                            console.log('done', done);
+                            controller.close();
+                            return;
+                            }
+                            controller.enqueue(value);
+                            console.log(done, value);
+                            push();
+                        })
+                        }
+                        push();
+                    }
+                    });
+                }).then(stream => {
+                    return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+                })
+                .then(result => {
+                    console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
+                    this.posterTen = JSON.parse(result).source
+                })
+                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${10}`, {
+                    mode: 'cors',
+                    method: 'GET'
+                }).then(response => response.body).then(rb  => {
+                    const reader = rb.getReader()
+                    return new ReadableStream({
+                    start(controller) {
+                        function push() {
+                        reader.read().then( ({done, value}) => {
+                            if (done) {
+                            console.log('done', done);
+                            controller.close();
+                            return;
+                            }
+                            controller.enqueue(value);
+                            console.log(done, value);
+                            push();
+                        })
+                        }
+                        push();
+                    }
+                    });
+                }).then(stream => {
+                    return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+                })
+                .then(result => {
+                    console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
+                    this.posterEleven = JSON.parse(result).source
+                })
+                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${11}`, {
+                    mode: 'cors',
+                    method: 'GET'
+                }).then(response => response.body).then(rb  => {
+                    const reader = rb.getReader()
+                    return new ReadableStream({
+                    start(controller) {
+                        function push() {
+                        reader.read().then( ({done, value}) => {
+                            if (done) {
+                            console.log('done', done);
+                            controller.close();
+                            return;
+                            }
+                            controller.enqueue(value);
+                            console.log(done, value);
+                            push();
+                        })
+                        }
+                        push();
+                    }
+                    });
+                }).then(stream => {
+                    return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+                })
+                .then(result => {
+                    console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
+                    this.posterTwelph = JSON.parse(result).source
+                })
+                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${12}`, {
+                    mode: 'cors',
+                    method: 'GET'
+                }).then(response => response.body).then(rb  => {
+                    const reader = rb.getReader()
+                    return new ReadableStream({
+                    start(controller) {
+                        function push() {
+                        reader.read().then( ({done, value}) => {
+                            if (done) {
+                            console.log('done', done);
+                            controller.close();
+                            return;
+                            }
+                            controller.enqueue(value);
+                            console.log(done, value);
+                            push();
+                        })
+                        }
+                        push();
+                    }
+                    });
+                }).then(stream => {
+                    return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+                })
+                .then(result => {
+                    console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
+                    this.posterFirthin = JSON.parse(result).source
+                })
+                fetch(`http://localhost:4000/data/item/?title=${this.newsItem.title.split(' ')[0]}&index=${13}`, {
+                    mode: 'cors',
+                    method: 'GET'
+                }).then(response => response.body).then(rb  => {
+                    const reader = rb.getReader()
+                    return new ReadableStream({
+                    start(controller) {
+                        function push() {
+                        reader.read().then( ({done, value}) => {
+                            if (done) {
+                            console.log('done', done);
+                            controller.close();
+                            return;
+                            }
+                            controller.enqueue(value);
+                            console.log(done, value);
+                            push();
+                        })
+                        }
+                        push();
+                    }
+                    });
+                }).then(stream => {
+                    return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+                })
+                .then(result => {
+                    console.log(`JSON.parse(result).source: ${JSON.parse(result).source}`)
+                    this.posterFourtin = JSON.parse(result).source
+                })
+            })
+        }, 5000)
     },
     methods: {
         scrollPictures(directionForward){
@@ -439,6 +862,7 @@ export default {
 
     .carousel > span {
         cursor: pointer;
+        user-select: none;
     }
 
     .carouselContent > img {
