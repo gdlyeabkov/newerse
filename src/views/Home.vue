@@ -2961,6 +2961,7 @@ export default {
       this.rubric = this.$route.query.rubric
     }
     fetch(`http://api.mediastack.com/v1/news?access_key=cc1688a90c2aa392ea8d81e6212bbf8a&limit=100&countries=ru&languages=ru`, {
+    // fetch(`https://api.mediastack.com/v1/news?access_key=cc1688a90c2aa392ea8d81e6212bbf8a&limit=100&countries=ru&languages=ru`, {
       mode: 'cors',
       method: 'GET'
     }).then(response => response.body).then(rb  => {
@@ -2993,8 +2994,8 @@ export default {
 
       setTimeout(() => {
         this.news.map((newsItem) => {
-          // fetch(`http://localhost:4000/data?title=${newsItem.title.split(' ')[0]}`, {
-          fetch(`https://newerse.herokuapp.com/data/?title=${newsItem.title.split(' ')[0]}`, {
+          fetch(`http://localhost:4000/data?title=${newsItem.title.split(' ')[0]}`, {
+          // fetch(`https://newerse.herokuapp.com/data/?title=${newsItem.title.split(' ')[0]}`, {
             mode: 'cors',
             method: 'GET'
           }).then(response => response.body).then(rb  => {
